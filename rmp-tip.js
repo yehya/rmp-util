@@ -72,21 +72,24 @@ var rmptip = function(professorElement, prfData) {
 
   var hotnessElement;
   /* Validates that the professor hotness that is passed in from the professors data object is between 1 and 3 or returns error message*/
-  try {
-    if (prfData.profHotness >= 1 && prfData.profHotness <= 4) {
-      hotnessElement = HOTNESS_IMAGES[prfData.profHotness - 1];
-    }else {
-      throw{
-      name: 'ProfessorHotnessOutOfRange',
-      message: 'Professor Range must be between 1 and 4'
-    };
+  var validateProfessorData = function(){
+    try {
+        if (prfData.profHotness >= 1 && prfData.profHotness <= 4) {
+        hotnessElement = HOTNESS_IMAGES[prfData.profHotness - 1];
+        }else {
+        throw{
+        name: 'ProfessorHotnessOutOfRange',
+        message: 'Professor Range must be between 1 and 4'
+        };
+        }
+    }
+    catch (ProfessorHotnessOutOfRange) {
+        console.error(ProfessorHotnessOutOfRange.name + ' ' + ProfessorHotnessOutOfRange.message);
+        hotnessElement = HOTNESS_IMAGES[0];
     }
   }
-  catch (ProfessorHotnessOutOfRange) {
-    console.error(ProfessorHotnessOutOfRange.name + ' ' + ProfessorHotnessOutOfRange.message);
-    hotnessElement = HOTNESS_IMAGES[0];
-  }
-
+  
+  validateProfessorData();
   /* Contains the professor attributes in html elements  */
   var profQuality = profDescriptionHeading('profcolumns',prfData.profQuality, 'Quality','');
   var profAvgGrade = profDescriptionHeading('profcolumns',prfData.profAvgGrade, 'Avg Grade','');

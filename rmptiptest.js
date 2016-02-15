@@ -25,7 +25,7 @@ var bananaSu = {
     profName: 'Banana Su',
     profQuality: 1,
     profAvgGrade: 'C',
-    profHotness: 2,
+    profHotness: 7,
     profHelpfulness: 3,
     profClarity: 1,
     profEasiness: 1

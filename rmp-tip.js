@@ -1,5 +1,12 @@
-
-/* hover pop up function that takes in the professor element for hovering over and professor data*/
+/**
+ * rmp-tip
+ * This function is passed an element 2 arguments, an element,
+ * and RateMyProfessor data, which will then be displayed
+ * as a tip.
+ *
+ * @param {element} professorElement
+ * @param {object} prfData
+ */
 var rmptip = function(professorElement, prfData) {
 
   // contains the hotness images
@@ -15,31 +22,38 @@ var rmptip = function(professorElement, prfData) {
       '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>';
 
   var professorTipPopUp = new Opentip(professorElement, {
-  title: tipTitle,
-  // html for the title and content is not escaped for styling
-  escapeTitle: false,
-  escapeContent: false,
-  hideDelay: 0.1,
-  fixed: true,
-  hideEffect: 'fade',
-  borderRadius: 12,
-  borderWidth: 3,
-  borderColor: '#000',
-  shadow: true,
-  shadowBlur: 10,
-  shadowOffset: [3,3],
-  background: '#00adee'
- });
+    title: tipTitle,
+    // html for the title and content is not escaped for styling
+    escapeTitle: false,
+    escapeContent: false,
+    hideDelay: 0.1,
+    fixed: true,
+    hideEffect: 'fade',
+    borderRadius: 12,
+    borderWidth: 3,
+    borderColor: '#000',
+    shadow: true,
+    shadowBlur: 10,
+    shadowOffset: [3,3],
+    background: '#00adee'
+  });
 
-  var getBarHTML = function (rating) {
-    var widthPX = (rating/5)*200;
-    var width = widthPX + "px";
+  /**
+   * This function takes in a rating value for a bar that is out of 5
+   * and then uses that value to generate a customized bar.
+   *
+   * @param {number} rating
+   * @returns {string}
+   */
+  var getBarHTML = function(rating) {
+    var widthPX = (rating / 5) * 200;
+    var width = widthPX + 'px';
 
     /*progress bar for the professor attributes*/
-    var progressBar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: '+width+
+    var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width +
         ';"></span><a href=\'#\' id=\'A_3\'></a></span>';
 
-    return progressBar;
+    return bar;
   };
 
   // The bars

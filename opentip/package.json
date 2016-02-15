@@ -1,0 +1,83 @@
+{
+  "name": "opentip",
+  "version": "2.4.3",
+  "description": "Free opensource tooltip class.",
+  "keywords": [
+    "tooltip"
+  ],
+  "homepage": "http://www.opentip.org",
+  "main": [
+    "./lib/opentip.js",
+    "./lib/adapter.ender.js"
+  ],
+  "maintainers": [
+    {
+      "name": "enyo",
+      "email": "m@tias.me"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Matias Meno",
+      "email": "m@tias.me",
+      "url": "http://www.matiasmeno.com"
+    }
+  ],
+  "bugs": {
+    "mail": "m@tias.me"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/enyo/opentip.git"
+    }
+  ],
+  "scripts": {
+    "test": "node_modules/mocha-phantomjs/bin/mocha-phantomjs test/test.html"
+  },
+  "dependencies": {
+    "qwery": "3.x",
+    "domready": "0.x",
+    "bean": "0.x",
+    "bonzo": "1.x",
+    "reqwest": "0.x"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-curl": "*",
+    "mocha": "*",
+    "expect.js": "*",
+    "mocha-phantomjs": "*",
+    "uglify-js2": "*",
+    "request": "*"
+  },
+  "ender": "noop",
+  "readme": "Opentip\n=======\n\n[Opentip][opentip] is a free opensource Java-Script tooltip class.\n\n\nFeatures\n--------\n\nIt supports:\n\n- Stems (little pointers)\n- Automatic content download with [AJAX][ajax]\n- Different styles\n- Automatic repositioning of the tooltip if it's not in the viewport of the browser anymore\n- All kind of triggers (The tooltip can be triggered by mouse over, click, form submit,... everything you can think of really)\n- CSS3 Animations\n- Well tested, with over 200 unit tests\n\nAs of Version 2.0 Opentip does **no longer depend on [Prototype]**. You can choose\n*any* adapter you want so you can work with the framework of your choice.\n\nSupported frameworks are:\n\n- Native. You can use this one if you don't use any framework.\n- [Ender]\n- [Component]\n- [jQuery]\n- [Prototype]\n\n\n> If you want to contribute, please read on in the [contribute](https://github.com/enyo/opentip/blob/master/CONTRIBUTING.md)\n> file. If you are migrating from version **1.x** please refer to the\n> [migration section](#migrating-from-opentip-1x-to-2x)\n\n### Build status\n\nMaster [![Build Status](https://travis-ci.org/enyo/opentip.png?branch=master)](https://travis-ci.org/enyo/opentip)  \n\nDevelop [![Build Status](https://travis-ci.org/enyo/opentip.png?branch=develop)](https://travis-ci.org/enyo/opentip) \n\n\nInstallation\n------------\n\n### jQuery, Prototype, Native\n\nJust download `lib/opentip.js` and `lib/adapter.FRAMEWORK.js` and include them\nin this order. You can also take the already minified and combined files in the\n`downloads/` folder.\n\n### Component\n\nThe easiest and recommended way to install *opentip* is with [component]. Just\nadd `enyo/opentip` as dependency in your `component.json` and rebuild it.\n\nSimply requiring opentip then activates the tooltips: `require \"opentip\";`\n\n\n### Ender\n\nIf you prefer [ender] as package manager just install it like this:\n\n```bash\n$ ender build opentip\n```\n\n* * *\n\nYou should include opentip's CSS as well. It's in `css/opentip.css`. (Except\nfor [component] of course which automatically bundles the css.)\n\n* * *\n\nIf you want to work it with <=IE8, you have to include excanvas as well. Please\nrefer to the [installation guide](http://www.opentip.org/installation.html).\n\nUsage\n-----\n\n*Version 2.4.3*\n\nWith HTML data attributes:\n\n```html\n<div data-ot=\"Tooltip content\" data-ot-show-on=\"click\">Click me</div>\n```\n\nor with the Javascript API:\n\n```js\n$('elementId').opentip('Content', { showOn: \"click\", ...options... });\n```\n\nFor the complete documentation please visit [www.opentip.org][opentip].\n\n\nFuture plans\n------------\n\n- ~~Become library independant. I'm currently working on\n  extracting all prototype functionality, so I can switch library easily. The\n  next library   I'll support will be jquery, and then mootools.~~\n\n- Add more skins.\n\n- ~~Add cooler loading animation.~~\n\n- ~~Implement unit tests.~~\n\n\nIf you have ideas, please contact me!\n\n\nContribute\n----------\n\nPlease refer to the [CONTRIBUTING](https://github.com/enyo/opentip/blob/develop/CONTRIBUTING.md) readme.\n\n\n\nMigrating from Opentip 1.x to 2.x\n---------------------------------\n\nThose are the major changes you should look out for when migrating from 1.x to 2.x:\n\n- There's no `Tip` or `Tips` object anymore. Everything is done through\n  `Opentip`\n\n- The recommend way to create opentips now is to call\n  `new Opentip(element, content, title, options)`, or with the framework of\n  your choice (eg, [ender]: `$(\"#my-div\").opentip(content, title options)`)\n\n- The instantiation of new tips inside an event (eg: `onclick`, `onmouseover`)\n  is no   longer supported! This would create new opentips everytime the event\n  is fired.\n\n- `Opentip.debugging = true;` does no longer exist. Use `Opentip.debug = true;`\n\n- Positions are no longer of the weird form `[ \"left\", \"top\" ]` but simply\n  strings   like `\"top left\"` or `\"right\"`\n\n- `stem.size` has been dropped in favor of `stem.length` and `stem.base`\n\n- Most of the design is now done in JS since the whole thing is a canvas now.\n\n- The way close buttons are defined has completely changed. Please refer to the\n  docs for more information.\n\nTagging\n-------\n\nTagging in this project is done with my [tag script](http://github.com/enyo/tag).\n\n\nAuthors\n-------\n\nOpentip is written by Matias Meno.<br>\nOriginal graphics by Tjandra Mayerhold.\n\n### Contributors\n\nThanks to the following people for providing bug reports, feature requests and fixes:\n\n- Torsten Saam\n- Aaron Peckham\n- Oguri\n- MaxKirillov\n- Nick Daugherty\n\nIf I forgot somebody, please just tell me.\n\n### Related projects\n\nYou might also be interested in my [formwatcher](http://www.formwatcher.org/) or\n[dropzone](http://www.dropzonejs.com/).\n\nLicense\n-------\n(The MIT License)\n\nCopyright (c) 2012 Matias Meno &lt;m@tias.me&gt;<br>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n[opentip]: http://www.opentip.org/\n[prototype]: http://www.prototypejs.org/\n[jquery]: http://jquery.com/\n[ajax]: http://en.wikipedia.org/wiki/Ajax_(programming)\n[excanvas]: https://github.com/enyo/excanvas\n[ender]: http://ender.no.de\n[component]: https://github.com/component",
+  "readmeFilename": "README.md",
+  "_id": "opentip@2.4.3",
+  "dist": {
+    "shasum": "2a3b500c2738f8069c33462ed48b5afe9ce804e6",
+    "tarball": "http://registry.npmjs.org/opentip/-/opentip-2.4.3.tgz"
+  },
+  "_from": "opentip@latest",
+  "_npmVersion": "1.2.17",
+  "_npmUser": {
+    "name": "enyo",
+    "email": "m@tias.me"
+  },
+  "directories": {},
+  "_shasum": "2a3b500c2738f8069c33462ed48b5afe9ce804e6",
+  "_resolved": "https://registry.npmjs.org/opentip/-/opentip-2.4.3.tgz"
+}

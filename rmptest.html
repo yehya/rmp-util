@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!--<link rel="stylesheet" href="stylesheet.css" type="text/css">-->
+    <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+	<!--<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/jquery/jquery-migrate.min.js"></script>
+    <script src="bower_components/opentip/lib/opentip.js"></script><!-- Change to the adapter you actually use -->
+    <script src="bower_components/opentip/lib/adapter-jquery.js"></script><!-- Change to the adapter you actually use -->
+    <link href="opentip/css/opentip.css" rel="stylesheet" type="text/css" />
+    <script src="rmp-tip.js"></script>
+  </head>
+  <body>
+    <h1>RMP JS Test File!</h1>
+    <h2 id="testtext">test text</h2>
+    <h2 id="testtext">test 2 text</h2>
+    <h2 id="testtext">test 3 text</h2>
+  </body>
+  <script type="text/javascript">
+    /* fake professor data for testing */
+    var jordanJohnson = {
+      profName: 'Jordan Johnson',
+      profQuality: 4.3,
+      profAvgGrade: 'B',
+      profHotness: 1,
+      profHelpfulness: 4.3,
+      profClarity: 4.2,
+      profEasiness: 2.3
+    };
+
+    /* fake professor data for testing */
+    var jacksonDaniels = {
+      profName: 'Jackson Daniels Morgan Arouga ',
+      profQuality: 2.0,
+      profAvgGrade: 'C',
+      profHotness: 3,
+      profHelpfulness: 2,
+      profClarity: 2,
+      profEasiness: 4
+    };
+
+    /* fake professor data for testing */
+    var bananaSu = {
+      profName: 'Banana Su',
+      profQuality: 1,
+      profAvgGrade: 'C',
+      profHotness: 2,
+      profHelpfulness: 3,
+      profClarity: 1,
+      profEasiness: 1
+    };
+
+    var professorElement = document.querySelectorAll('#testtext'); // professor test element
+
+    rmptip(professorElement[0], jordanJohnson);
+    rmptip(professorElement[1], jacksonDaniels);
+    rmptip(professorElement[2], bananaSu);
+  </script>
+</html>

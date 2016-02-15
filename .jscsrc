@@ -1,0 +1,8 @@
+{
+//  Styling settings for JSCS
+  "preset": "google",
+  "fix": true,
+  "maximumLineLength": 200,
+  "disallowMultipleVarDecl": false,
+  "requireSemicolons": true
+}

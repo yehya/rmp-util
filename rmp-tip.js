@@ -11,9 +11,10 @@ var rmptip = function(professorElement, prfData) {
 
   // contains the hotness images
   var HOTNESS_IMAGES = [
-      '<img src=\'assets/cold-chili.png\' height=\'29\' width=\'29\'>',
+      '<img src=\'assets/cold-chili.png\' height=\'25\' width=\'25\'>',
       '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
-      '<img src=\'assets/steamy-chili.png\' height=\'29\' width=\'29\'>'
+      '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
+      '<img src=\'scorching-chili.png\' height=\'25\' width=\'25\'>'    
   ];
 
   /*  creates a new instance of open tip which contains the pop up*/
@@ -72,12 +73,12 @@ var rmptip = function(professorElement, prfData) {
   var hotnessElement;
   /* Validates that the professor hotness that is passed in from the professors data object is between 1 and 3 or returns error message*/
   try {
-    if (prfData.profHotness >= 1 && prfData.profHotness <= 3) {
+    if (prfData.profHotness >= 1 && prfData.profHotness <= 4) {
       hotnessElement = HOTNESS_IMAGES[prfData.profHotness - 1];
     }else {
       throw{
       name: 'ProfessorHotnessOutOfRange',
-      message: 'Professor Range must be between 1 and 3'
+      message: 'Professor Range must be between 1 and 4'
     };
     }
   }

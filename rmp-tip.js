@@ -14,7 +14,7 @@ var rmptip = function(professorElement, prfData) {
       '<img src=\'assets/cold-chili.png\' height=\'25\' width=\'25\'>',
       '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
       '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
-      '<img src=\'scorching-chili.png\' height=\'25\' width=\'25\'>'    
+      '<img src=\'assets/scorching-chili.png\' height=\'25\' width=\'25\'>'    
   ];
 
   /*  creates a new instance of open tip which contains the pop up*/

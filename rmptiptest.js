@@ -14,7 +14,7 @@ var jacksonDaniels = {
     profName: 'Jackson Daniels Morgan Arouga ',
     profQuality: 2.0,
     profAvgGrade: 'C',
-    profHotness: 3,
+    profHotness: 2,
     profHelpfulness: 2,
     profClarity: 2,
     profEasiness: 4
@@ -23,12 +23,12 @@ var jacksonDaniels = {
 /* fake professor data for testing */
 var bananaSu = {
     profName: 'Banana Su',
-    profQuality: 1,
+    profQuality: 3,
     profAvgGrade: 'C',
-    profHotness: 7,
-    profHelpfulness: 3,
-    profClarity: 1,
-    profEasiness: 1
+    profHotness: 3,
+    profHelpfulness: 4,
+    profClarity: 3,
+    profEasiness: 2
 };
 
 var professorElement = document.querySelectorAll('.testtext'); // professor test element

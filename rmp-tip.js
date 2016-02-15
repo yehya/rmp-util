@@ -70,32 +70,82 @@ var rmptip = function(professorElement, prfData) {
     '<h2 class=\'profheadingcontent\'>' + profAttribute + progressBar + '</h2>' + '</span>';
   };
 
-  var hotnessElement;
-  /* Validates that the professor hotness that is passed in from the professors data object is between 1 and 3 or returns error message*/
+  var hotnessElement, profQuality, profAvgGrade, profHotness, profHelpfulness, profClarity ,profEasiness;
+  hotnessElement = HOTNESS_IMAGES[prfData.profHotness - 1];
+  
+  /* Validates that the professors data that is passed in and returns a professorDataError message*/
   var validateProfessorData = function(){
     try {
-        if (prfData.profHotness >= 1 && prfData.profHotness <= 4) {
-        hotnessElement = HOTNESS_IMAGES[prfData.profHotness - 1];
-        }else {
-        throw{
-        name: 'ProfessorHotnessOutOfRange',
-        message: 'Professor Range must be between 1 and 4'
-        };
+        if (prfData.profHotness < 0 || prfData.profHotness > 4) {
+            throw{
+                name: 'ProfessorHotnessOutOfRange',
+                message: 'Professor Hotness Range must be between 1 and 4'
+            };   
         }
-    }
-    catch (ProfessorHotnessOutOfRange) {
-        console.error(ProfessorHotnessOutOfRange.name + ' ' + ProfessorHotnessOutOfRange.message);
-        hotnessElement = HOTNESS_IMAGES[0];
+        if(prfData.profQuality <= 0 || prfData.profQuality > 5){
+            throw{
+                name: 'ProfessorQualityOutOfRange',
+                message: 'Professor Quality Range must be between 1 and 5'
+            };
+        }
+        if(prfData.profAvgGrade <= 0 || prfData.profAvgGrade > 5){
+            throw{
+                name: 'ProfessorAvgGradeOutOfRange',
+                message: 'Professor Average Grade Range must be between 1 and 5'
+            };
+        }
+        if(prfData.profHelpfulness <= 0 || prfData.profHelpfulness > 5){
+            throw{
+                name: 'ProfessorHelpfulnessOutOfRange',
+                message: 'Professor Helpfulness Range must be between 1 and 5'
+            };
+        }
+        if(prfData.profClarity <= 0 || prfData.profClarity > 5){
+            throw{
+                name: 'ProfessorClarityOutOfRange',
+                message: 'Professor Clarity Range must be between 1 and 5'
+            };
+        }
+        if(prfData.profEasiness <= 0 || prfData.profEasiness > 5){
+            throw{
+                name: 'ProfessorEasinessOutOfRange',
+                message: 'Professor Easiness Range must be between 1 and 5'
+            };
+        }
+    }catch (error) {
+        console.error(error.name + ' ' + error.message);
+        switch(error.name){
+            case "ProfessorHotnessOutOfRange":
+                 hotnessElement = "Invalid Data";
+                 break;
+            case "ProfessorQualityOutOfRange":
+                 prfData.profQuality = "Invalid Data";
+                 break;
+            case "ProfessorAvgGradeOutOfRange":
+                 prfData.profAvgGrade = "Invalid Data";
+                 break;
+            case "ProfessorHelpfulnessOutOfRange":
+                 prfData.profHelpfulness = "Invalid Data";
+                 break;
+            case "ProfessorClarityOutOfRange":
+                 prfData.profClarity = "Invalid Data";
+                 break;
+            case "ProfessorEasinessOutOfRange":
+                 prfData.profEasiness = "Invalid Data";
+                 break;
+        }   
     }
   }
   
-  validateProfessorData();
+  validateProfessorData(); 
   /* Contains the professor attributes in html elements  */
-  var profQuality = profDescriptionHeading('profcolumns',prfData.profQuality, 'Quality','');
-  var profAvgGrade = profDescriptionHeading('profcolumns',prfData.profAvgGrade, 'Avg Grade','');
-  var profHotness = profDescriptionHeading('profcolumns', hotnessElement, 'Hotness','');
-  var profHelpfulness = profDescriptionHeading('profLine', prfData.profHelpfulness, 'Helpfulness',bars.helpfulness);
-  var profClarity = profDescriptionHeading('profLine',prfData.profClarity, 'Clarity',bars.clarity);
-  var profEasiness = profDescriptionHeading('profLine',prfData.profEasiness, 'Easiness',bars.easiness);
+  
+  profQuality = profDescriptionHeading('profcolumns',prfData.profQuality, 'Quality','');
+  profAvgGrade = profDescriptionHeading('profcolumns',prfData.profAvgGrade, 'Avg Grade','');
+  profHotness = profDescriptionHeading('profcolumns', hotnessElement, 'Hotness','');
+  profHelpfulness = profDescriptionHeading('profLine', prfData.profHelpfulness, 'Helpfulness',bars.helpfulness);
+  profClarity = profDescriptionHeading('profLine',prfData.profClarity, 'Clarity',bars.clarity);
+  profEasiness = profDescriptionHeading('profLine',prfData.profEasiness, 'Easiness',bars.easiness);
   professorTipPopUp.setContent(profQuality + profAvgGrade + profHotness + profHelpfulness + profClarity + profEasiness); // Updates Opentips content
+
 };

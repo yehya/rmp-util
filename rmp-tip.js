@@ -49,7 +49,7 @@ var rmptip = function(professorElement, prfData) {
   var getBarHTML = function(rating) {
     var widthPX = (rating / 5) * 200;
     var width = widthPX + 'px';
-    var color = ['red', 'yellow', 'green'];
+    var color = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
     var colorChosen;
     
     /* Determines what color each progress bar is */

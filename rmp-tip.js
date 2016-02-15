@@ -10,11 +10,12 @@ var rmptip = function(professorElement, prfData) {
   ];
 
   /*  creates a new instance of open tip which contains the pop up*/
+
+  var tipTitle = '<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
+      '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>';
+
   var professorTipPopUp = new Opentip(professorElement, {
-  title: ('<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
-        '<h1 class=\'profname\'>' +
-        prfData.profName +
-        '</h1>' + '</span>'),
+  title: tipTitle,
   // html for the title and content is not escaped for styling
   escapeTitle: false,
   escapeContent: false,
@@ -28,11 +29,25 @@ var rmptip = function(professorElement, prfData) {
   shadowBlur: 10,
   shadowOffset: [3,3],
   background: '#00adee'
-}
-);
+ });
 
-  /*progress bar for the professor attributes*/
-  var progressBar = '<span id=\'entireBar\'><span id=\'progressBar\'></span><a href=\'#\' id=\'A_3\'></a></span>';
+  var getBarHTML = function (rating) {
+    var widthPX = (rating/5)*200;
+    var width = widthPX + "px";
+
+    /*progress bar for the professor attributes*/
+    var progressBar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: '+width+
+        ';"></span><a href=\'#\' id=\'A_3\'></a></span>';
+
+    return progressBar;
+  };
+
+  // The bars
+  var bars = {};
+
+  bars.helpfulness = getBarHTML(prfData.profHelpfulness);
+  bars.clarity = getBarHTML(prfData.profClarity);
+  bars.easiness = getBarHTML(prfData.profEasiness);
 
   /* creates the project description headings, professor heading content and appends the progress bar */
   var profDescriptionHeading = function(profClass, profAttribute, profAttributeTitle, progressBar) {
@@ -61,10 +76,8 @@ var rmptip = function(professorElement, prfData) {
   var profQuality = profDescriptionHeading('profcolumns',prfData.profQuality, 'Quality','');
   var profAvgGrade = profDescriptionHeading('profcolumns',prfData.profAvgGrade, 'Avg Grade','');
   var profHotness = profDescriptionHeading('profcolumns', hotnessElement, 'Hotness','');
-  var profHelpfulness = profDescriptionHeading('profLine', prfData.profHelpfulness, 'Helpfulness',progressBar);
-  var profClarity = profDescriptionHeading('profLine',prfData.profClarity, 'Clarity',progressBar);
-  var profEasiness = profDescriptionHeading('profLine',prfData.profEasiness, 'Easiness',progressBar);
+  var profHelpfulness = profDescriptionHeading('profLine', prfData.profHelpfulness, 'Helpfulness',bars.helpfulness);
+  var profClarity = profDescriptionHeading('profLine',prfData.profClarity, 'Clarity',bars.clarity);
+  var profEasiness = profDescriptionHeading('profLine',prfData.profEasiness, 'Easiness',bars.easiness);
   professorTipPopUp.setContent(profQuality + profAvgGrade + profHotness + profHelpfulness + profClarity + profEasiness); // Updates Opentips content
-  var progressBars = document.querySelector('#opentip-3');
-  console.log(progressBars);
 };

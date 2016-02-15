@@ -1,0 +1,26 @@
+{
+  "name": "rmp-tip",
+  "main": "rmp-tip.js",
+  "homepage": "https://github.com/awadYehya/rmp-tip",
+  "authors": [
+    "Hozaifa Abdalla <abdallahozaifa19527@gmail.com>",
+    "Yehya Awad <yehyaawad.kip@gmail.com>"
+  ],
+  "description": "Tool tip that displays professors RMP details",
+  "moduleType": [],
+  "keywords": [
+    "rmptip"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "opentip": "^2.4.6"
+  }
+}

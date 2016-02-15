@@ -28,7 +28,7 @@ var bananaSu = {
     profHotness: 3,
     profHelpfulness: 4,
     profClarity: 3,
-    profEasiness: 2
+    profEasiness: 1
 };
 
 var professorElement = document.querySelectorAll('.testtext'); // professor test element

@@ -49,9 +49,24 @@ var rmptip = function(professorElement, prfData) {
   var getBarHTML = function(rating) {
     var widthPX = (rating / 5) * 200;
     var width = widthPX + 'px';
-
+    var color = ['red', 'yellow', 'green'];
+    var colorChosen;
+    
+    /* Determines what color each progress bar is */
+    switch(true){
+        case (rating >=0 && rating <=1):
+            colorChosen = color[0];
+            break;
+        case (rating >1 && rating <=3):
+            colorChosen = color[1];
+            break;
+        case (rating > 3 && rating <=5):
+            colorChosen = color[2];
+            break;
+    }
+    console.log(colorChosen);
     /*progress bar for the professor attributes*/
-    var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width +
+    var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width + ';background:' + colorChosen +
         ';"></span><a href=\'#\' id=\'A_3\'></a></span>';
 
     return bar;

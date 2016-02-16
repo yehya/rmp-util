@@ -22,5 +22,8 @@
   ],
   "dependencies": {
     "opentip": "^2.4.6"
+  },
+  "devDependencies": {
+    "jscs": "^2.7.0"
   }
 }

@@ -1,6 +1,6 @@
 /**
  * rmp-tip
- * This function is passed an element 2 arguments, an element,
+ * This function is passed an 2 arguments, an element,
  * and RateMyProfessor data, which will then be displayed
  * as a tip.
  *

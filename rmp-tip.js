@@ -63,24 +63,24 @@ var rmptip = function(professorElement, prfData) {
   var getBarHTML = function(rating) {
     var widthPX = (rating / 5) * 200;
     var width = widthPX + 'px';
-    var color = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
-    var colorChosen;
+    var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
+    var color = 'linear-gradient(to right, #b51b58 0%, #ef2e72 100%)';
 
     /* Determines what color each progress bar is */
     switch (true){
       case (rating >= 0 && rating <= 1):
-        colorChosen = color[0];
+        color = BAR_COLOR_STYLES[0];
         break;
       case (rating > 1 && rating <= 3):
-        colorChosen = color[1];
+        color = BAR_COLOR_STYLES[1];
         break;
       case (rating > 3 && rating <= 5):
-        colorChosen = color[2];
+        color = BAR_COLOR_STYLES[2];
         break;
     }
-    console.log(colorChosen);
+
     /*progress bar for the professor attributes*/
-    var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width + ';background:' + colorChosen +
+    var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width + ';background:' + color +
         ';"></span><a href=\'#\' id=\'A_3\'></a></span>';
 
     return bar;

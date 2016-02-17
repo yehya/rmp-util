@@ -16,7 +16,6 @@
     font: normal normal normal 16px/16px 'Times New Roman';
     margin: 0 10px 20px 45px;
     padding: 3px 17px 0px 2px;
-
 }/*#DIV_1*/
 
 #entireBar:after {
@@ -28,6 +27,7 @@
     width: 1px;
     content: '';
     font: normal normal normal 16px/16px 'Times New Roman';
+    float:none;
 }/*#DIV_1:after*/
 
 #progressBar{

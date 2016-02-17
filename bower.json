@@ -21,6 +21,10 @@
     "tests"
   ],
   "dependencies": {
-    "opentip": "^2.4.6"
+    "opentip": "^2.4.6",
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+    "jscs": "^2.7.0"
   }
 }

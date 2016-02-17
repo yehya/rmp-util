@@ -1,6 +1,7 @@
 .opentip {
         background: url(../assets/background.png);
         background-size: auto auto;
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
         /*width:600px;*/
   }
   #entireBar {
@@ -74,7 +75,7 @@
       
   }
   .profheading{
-      font-family: "Source Sans Pro Black";
+      /*font-family: "Source Sans Pro Black";*/
       font-size: 15px;
   }
   .profheadingcontent{
@@ -84,6 +85,7 @@
   }
   .profname{
       font-size: 30px;
+      font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
       margin-left:10px;
       display: inline;
       position: relative;

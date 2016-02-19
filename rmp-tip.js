@@ -83,7 +83,7 @@ var rmptip = function (professorElement, prfData) {
         //console.log(colorChosen);
         /*progress bar for the professor attributes*/
         var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width + ';background:' + color +
-            ';"></span><a href=\'#\' id=\'A_3\'></a></span>';
+            ';"></span></span>';
 
         return bar;
     };

@@ -52,31 +52,6 @@
     margin: 0px 0px 0px 1px;
 }
 
-
-/*#DIV_2*/
-
-#A_3 {
-    box-sizing: border-box;
-    color: rgb(0, 173, 238);
-    cursor: pointer;
-    display: block;
-    height: 15px;
-    left: 492.34375px;
-    opacity: 0;
-    position: relative;
-    text-decoration: none solid rgb(0, 173, 238);
-    width: 14px;
-    z-index: 0;
-    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
-    border: 0px none rgb(0, 173, 238);
-    border-radius: 100px 100px 100px 100px;
-    font: normal normal normal 16px/16px 'Times New Roman';
-    outline: rgb(0, 173, 238) none 0px;
-}
-
-
-/*#A_3*/
-
 .profcolumns {
     float: left;
     margin-left: 15px;

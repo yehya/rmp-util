@@ -1,14 +1,15 @@
 .opentip {
-        background: url(../assets/background.png);
-        background-size: auto auto;
-        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-        /*width:600px;*/
-  }
-  #entireBar {
+    background: url(../assets/background.png);
+    background-size: auto auto;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    /*width:600px;*/
+}
+
+#entireBar {
     box-sizing: border-box;
     float: left;
     display: inline;
-    bottom:14px;
+    bottom: 14px;
     height: 15px;
     position: relative;
     width: 200px;
@@ -17,7 +18,10 @@
     font: normal normal normal 16px/16px 'Times New Roman';
     margin: 0 10px 20px 45px;
     padding: 3px 17px 0px 2px;
-}/*#DIV_1*/
+}
+
+
+/*#DIV_1*/
 
 #entireBar:after {
     box-sizing: border-box;
@@ -28,11 +32,14 @@
     width: 1px;
     content: '';
     font: normal normal normal 16px/16px 'Times New Roman';
-    float:none;
-}/*#DIV_1:after*/
+    float: none;
+}
 
-#progressBar{
-    float:left;
+
+/*#DIV_1:after*/
+
+#progressBar {
+    float: left;
     box-sizing: border-box;
     height: 15px;
     left: 0px;
@@ -43,7 +50,10 @@
     border-radius: 100px 100px 100px 100px;
     font: normal normal normal 16px/16px 'Times New Roman';
     margin: 0px 0px 0px 1px;
-}/*#DIV_2*/
+}
+
+
+/*#DIV_2*/
 
 #A_3 {
     box-sizing: border-box;
@@ -62,32 +72,36 @@
     border-radius: 100px 100px 100px 100px;
     font: normal normal normal 16px/16px 'Times New Roman';
     outline: rgb(0, 173, 238) none 0px;
-}/*#A_3*/
+}
 
 
-  .profcolumns{
-        float:left;
-        margin-left:15px;
-        /*border-left:1px solid #000;
+/*#A_3*/
+
+.profcolumns {
+    float: left;
+    margin-left: 15px;
+    /*border-left:1px solid #000;
         padding-left: 7px;*/
-  }
-  .profLine{
-      
-  }
-  .profheading{
-      /*font-family: "Source Sans Pro Black";*/
-      font-size: 15px;
-  }
-  .profheadingcontent{
-      /*margin-right:37px;*/
-      padding-right: 50px;
-      padding-bottom: 10px;
-  }
-  .profname{
-      font-size: 30px;
-      font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-      margin-left:10px;
-      display: inline;
-      position: relative;
-      bottom:13.5px;
-  }
+}
+
+.profLine {}
+
+.profheading {
+    /*font-family: "Source Sans Pro Black";*/
+    font-size: 15px;
+}
+
+.profheadingcontent {
+    /*margin-right:37px;*/
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+
+.profname {
+    font-size: 30px;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    margin-left: 10px;
+    display: inline;
+    position: relative;
+    bottom: 13.5px;
+}

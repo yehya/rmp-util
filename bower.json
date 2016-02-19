@@ -21,8 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "opentip": "^2.4.6",
-    "skeleton": "^2.0.4"
+    "opentip": "^2.4.6"
   },
   "devDependencies": {
     "jscs": "^2.7.0"

@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "opentip": "^2.4.6",
-    "bootstrap": "^3.3.6"
+    "skeleton": "^2.0.4"
   },
   "devDependencies": {
     "jscs": "^2.7.0"

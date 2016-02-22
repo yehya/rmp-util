@@ -18,8 +18,9 @@ var rmptip = function (professorElement, prfData) {
      '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
      '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
      '<img src=\'assets/scorching-chili.png\' height=\'25\' width=\'25\'>'
- ];
+    ];
 
+      
     /**
      * Constants for chili pepper image to use
      * @type {{COLD: number, WARM: number, STEAMY: number, SCORCHING: number}}
@@ -33,8 +34,8 @@ var rmptip = function (professorElement, prfData) {
 
     /*  creates a new instance of open tip which contains the pop up*/
 
-    var tipTitle = '<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
-        '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>';
+    var tipTitle = '<div class="col-sm-4">' +'<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
+        '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>' + '</div>';
 
     var professorTipPopUp = new Opentip(professorElement, {
         title: tipTitle,

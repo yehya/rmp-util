@@ -1,8 +1,10 @@
 .opentip {
     background: url(../assets/background.png);
     background-size: auto auto;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    /*width:600px;*/
+    /*font-family: Lor,"Helvetica Neue Light", "Helvetica Neue", Calibri, Helvetica, Arial;*/
+    /*width:80%;*/
+    font-family: "Source Sans Pro Black", serif;
+    font-weight: bold;
 }
 
 #entireBar {
@@ -16,7 +18,7 @@
     background: rgb(204, 204, 204) none repeat scroll 0% 0% / auto padding-box border-box;
     border-radius: 100px 100px 100px 100px;
     font: normal normal normal 16px/16px 'Times New Roman';
-    margin: 0 10px 20px 45px;
+    margin: 10% 4% 3% 5%;
     padding: 3px 17px 0px 2px;
 }
 
@@ -50,33 +52,4 @@
     border-radius: 100px 100px 100px 100px;
     font: normal normal normal 16px/16px 'Times New Roman';
     margin: 0px 0px 0px 1px;
-}
-
-.profcolumns {
-    float: left;
-    margin-left: 15px;
-    /*border-left:1px solid #000;
-        padding-left: 7px;*/
-}
-
-.profLine {}
-
-.profheading {
-    /*font-family: "Source Sans Pro Black";*/
-    font-size: 15px;
-}
-
-.profheadingcontent {
-    /*margin-right:37px;*/
-    padding-right: 50px;
-    padding-bottom: 10px;
-}
-
-.profname {
-    font-size: 30px;
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    margin-left: 10px;
-    display: inline;
-    position: relative;
-    bottom: 13.5px;
 }

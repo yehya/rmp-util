@@ -23,17 +23,10 @@ var rmptip = function (professorElement, prfData) {
      * @type {string[]}
      */
     var HOTNESS_IMAGES = [
-<<<<<<< HEAD
      '<img src=\'assets/cold-chili.png\' height=\'25\' width=\'25\'>',
      '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
      '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
      '<img src=\'assets/scorching-chili.png\' height=\'25\' width=\'25\'>'
-=======
-        '<img src=\'' + IMAGE_SRC.COLD_CHILI + '\' height=\'25\' width=\'25\'>',
-        '<img src=\'' + IMAGE_SRC.WARM_CHILI + '\' height=\'25\' width=\'25\'>',
-        '<img src=\'' + IMAGE_SRC.STEAMY_CHILI + '\' height=\'25\' width=\'25\'>',
-        '<img src=\'' + IMAGE_SRC.SCORCHING_CHILI + '\' height=\'25\' width=\'25\'>'
->>>>>>> refs/remotes/origin/master
     ];
 
       
@@ -50,14 +43,16 @@ var rmptip = function (professorElement, prfData) {
 
     /*  creates a new instance of open tip which contains the pop up*/
 
-<<<<<<< HEAD
-    var tipTitle = '<div class="col-sm-4">' +'<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
-        '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>' + '</div>';
-=======
-    var tipTitle = '<span>' + '<img src=\'' + IMAGE_SRC.SMILEBOX + '\' height=\'42\' width=\'42\'>' +
-        '<h1 class=\'profname\'>' + prfData.name + '</h1>' + '</span>';
->>>>>>> refs/remotes/origin/master
+//
+//    var tipTitle = '<div class="col-sm-4">' +'<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
+//        '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>' + '</div>';
 
+//    var tipTitle = '<div class="container-fluid">' +'<div class="row">'+ '<img src=\'' + IMAGE_SRC.SMILEBOX + '\' height=\'42\' width=\'42\'>' +
+//        '<h1 class=\'profname\'>' + '<h3 class="col-md-4">'+ prfData.name + '</h3>' + '</div>' + '</div>';
+      var tipTitle = '<div class="container-fluid"><div class="row"><div class="col-md-12">' + 
+          '<img style="float:left;width:25px;height:25x; margin-right:10px;" src="assets/smilebox.png"/>' + 
+          '<p style = "text-align:center;font-size:25px;padding-bottom:-10%;">' + prfData.name + '</p></div></div>'
+    
     var professorTipPopUp = new Opentip(professorElement, {
         title: tipTitle,
         // html for the title and content is not escaped for styling
@@ -74,7 +69,14 @@ var rmptip = function (professorElement, prfData) {
         shadowOffset: [3, 3],
         background: '#00adee'
     });
-
+    
+    $(professorTipPopUp).addClass("container-fluid");
+    $(".opentip").css("background", "url(../assets/background.png)");
+    
+    
+    //console.log($("#opentip-1").width(100));
+    
+    
     /**
      * This function takes in a rating value for a bar that is out of 5
      * and then uses that value to generate a customized bar.
@@ -82,7 +84,7 @@ var rmptip = function (professorElement, prfData) {
      * @param {number} rating
      * @returns {string}
      */
-    var getBarHTML = function (rating) {
+    var getBarHTML = function (rating, trait) {
         var widthPX = (rating / 5) * 200;
         var width = widthPX + 'px';
         var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
@@ -104,23 +106,24 @@ var rmptip = function (professorElement, prfData) {
 
         //console.log(colorChosen);
         /*progress bar for the professor attributes*/
-        var bar = '<span id=\'entireBar\'><span id=\'progressBar\' style="width: ' + width + ';background:' + color +
-            ';"></span></span>';
-
+        var bar = '<div class="container-fluid">'+ trait + '<div class="container" id=\'entireBar\'><div class="container" id=\'progressBar\' style="width: ' + width + ';background:' + color +
+            ';"></div></div>' + '</div>';
+        
         return bar;
+        
     };
 
     // The bars
     var bars = {};
 
-    bars.helpfulness = getBarHTML(prfData.help);
-    bars.clarity = getBarHTML(prfData.clarity);
-    bars.easiness = getBarHTML(prfData.dificulty);
+    bars.helpfulness = getBarHTML(prfData.help,"Helpfulness");
+    bars.clarity = getBarHTML(prfData.clarity,"Clarity");
+    bars.easiness = getBarHTML(prfData.dificulty, "Easiness");
 
     /* creates the project description headings, professor heading content and appends the progress bar */
     var profDescriptionHeading = function (profClass, profAttribute, profAttributeTitle, progressBar) {
-        return '<span class=\'' + profClass + '\'>' + '<h2 class=\'profheading\'>' + profAttributeTitle + '</h2>' +
-            '<h2 class=\'profheadingcontent\'>' + profAttribute + progressBar + '</h2>' + '</span>';
+        return '<div class="col-sm-3">' + '<span style="font-size:18px;" class=\'' + profClass + '\'>' + '<h2 class=\'profheading\'>' + profAttributeTitle + '</h2>' +
+            '<h2 class=\'profheadingcontent\'>' + profAttribute + progressBar + '</h2>' + '</span>' + '</div>';
     };
 
     var hotnessElement, profQuality, profAvgGrade, profHotness, profHelpfulness, profClarity, profEasiness;
@@ -199,6 +202,25 @@ var rmptip = function (professorElement, prfData) {
     profHelpfulness = profDescriptionHeading('profLine', prfData.help, 'Helpfulness', bars.helpfulness);
     profClarity = profDescriptionHeading('profLine', prfData.clarity, 'Clarity', bars.clarity);
     profEasiness = profDescriptionHeading('profLine', prfData.dificulty, 'Easiness', bars.easiness);
-    professorTipPopUp.setContent(profQuality + profAvgGrade + profHotness + profHelpfulness + profClarity + profEasiness); // Updates Opentips content
-
+//    professorTipPopUp.setContent(profQuality + profAvgGrade + profHotness + profHelpfulness + profClarity + profEasiness); // Updates Opentips content
+//	var threecolLayout = function(colhead1, colhead2, colhead3){
+//		return "<div class='container-fluid' style='text-align:center;margin-left:5%;margin-right:auto;'><h1 style='font-size:18px;'></h1><span class='row inline-block-row'>" + 
+//		"<span class='col-sm-4 col-md-3'> " + 
+//        "<span class='height1'>" + colhead1 + "</span>" + 
+//        "</span><span class='col-sm-4 col-md-3'>" +
+//        "<span class=''>" + colhead2 + "</span>" +
+//        "</span><span class='col-sm-4 col-md-3'>" + 
+//        "<span class=''>" + colhead3 + "</span></span></span></div>"
+//    };
+    var threecolLayout = function(quality, grade, hotness){
+        return '<div class="container-fluid" style="padding-bottom:3%;">' + '<div class="col-xs-4 col-sm-4" >' + quality + '</div>' + 
+            '<div class="col-xs-4 col-sm-4" >' + grade + '</div>' +
+            '<div class="col-xs-4 col-sm-4" >' + hotness + '</div>' + '</div>';
+    }
+    var profInfo = threecolLayout("Quality", "Grade", "Hotness")  + threecolLayout("4.1", "2.0", "3.1");
+    professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
+    //console.log($("#opentip-2").width());
+    //console.log($("#opentip-3").width());
+    professorTipPopUp.show();
+    professorTipPopUp.hide();
 };

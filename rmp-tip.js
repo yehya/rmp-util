@@ -22,13 +22,12 @@ var rmptip = function (professorElement, prfData) {
      * Image location sources
      * @type {string[]}
      */
-    var HOTNESS_IMAGES = [
-     '<img src=\'assets/cold-chili.png\' height=\'25\' width=\'25\'>',
-     '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
-     '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
-     '<img src=\'assets/scorching-chili.png\' height=\'25\' width=\'25\'>'
-    ];
-
+//    var HOTNESS_IMAGES = [
+//     '<img src=\'assets/cold-chili.png\' height=\'25\' width=\'25\'>',
+//     '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
+//     '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
+//     '<img src=\'assets/scorching-chili.png\' height=\'25\' width=\'25\'>'
+//    ];
       
     /**
      * Constants for chili pepper image to use
@@ -43,15 +42,9 @@ var rmptip = function (professorElement, prfData) {
 
     /*  creates a new instance of open tip which contains the pop up*/
 
-//
-//    var tipTitle = '<div class="col-sm-4">' +'<span>' + '<img src=\'assets/smilebox.png\' height=\'42\' width=\'42\'>' +
-//        '<h1 class=\'profname\'>' + prfData.profName + '</h1>' + '</span>' + '</div>';
-
-//    var tipTitle = '<div class="container-fluid">' +'<div class="row">'+ '<img src=\'' + IMAGE_SRC.SMILEBOX + '\' height=\'42\' width=\'42\'>' +
-//        '<h1 class=\'profname\'>' + '<h3 class="col-md-4">'+ prfData.name + '</h3>' + '</div>' + '</div>';
-      var tipTitle = '<div class="container-fluid"><div class="row"><div class="col-md-12">' + 
-          '<img style="float:left;width:25px;height:25x; margin-right:10px;" src="assets/smilebox.png"/>' + 
-          '<p style = "text-align:center;font-size:25px;padding-bottom:-10%;">' + prfData.name + '</p></div></div>'
+ var tipTitle = '<div class="container-fluid"><div class="row"><div class="col-md-3 col-sm-3 col-xs-3">' + 
+          '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + 
+          '<div class="col-md-9 col-sm-9 col-xs-9"><p>' + prfData.name + '</p></div></div>'
     
     var professorTipPopUp = new Opentip(professorElement, {
         title: tipTitle,
@@ -70,13 +63,11 @@ var rmptip = function (professorElement, prfData) {
         background: '#00adee'
     });
     
-    $(professorTipPopUp).addClass("container-fluid");
-    $(".opentip").css("background", "url(../assets/background.png)");
+    //$(professorTipPopUp).addClass("container-fluid");
     
     
     //console.log($("#opentip-1").width(100));
-    
-    
+   
     /**
      * This function takes in a rating value for a bar that is out of 5
      * and then uses that value to generate a customized bar.
@@ -127,7 +118,7 @@ var rmptip = function (professorElement, prfData) {
     };
 
     var hotnessElement, profQuality, profAvgGrade, profHotness, profHelpfulness, profClarity, profEasiness;
-    hotnessElement = HOTNESS_IMAGES[prfData.chili - 1];
+    hotnessElement = IMAGE_SRC.COLD_CHILI;
 
     /* Validates that the professors data that is passed in and returns a professorDataError message*/
     var validateProfessorData = function () {
@@ -202,25 +193,17 @@ var rmptip = function (professorElement, prfData) {
     profHelpfulness = profDescriptionHeading('profLine', prfData.help, 'Helpfulness', bars.helpfulness);
     profClarity = profDescriptionHeading('profLine', prfData.clarity, 'Clarity', bars.clarity);
     profEasiness = profDescriptionHeading('profLine', prfData.dificulty, 'Easiness', bars.easiness);
-//    professorTipPopUp.setContent(profQuality + profAvgGrade + profHotness + profHelpfulness + profClarity + profEasiness); // Updates Opentips content
-//	var threecolLayout = function(colhead1, colhead2, colhead3){
-//		return "<div class='container-fluid' style='text-align:center;margin-left:5%;margin-right:auto;'><h1 style='font-size:18px;'></h1><span class='row inline-block-row'>" + 
-//		"<span class='col-sm-4 col-md-3'> " + 
-//        "<span class='height1'>" + colhead1 + "</span>" + 
-//        "</span><span class='col-sm-4 col-md-3'>" +
-//        "<span class=''>" + colhead2 + "</span>" +
-//        "</span><span class='col-sm-4 col-md-3'>" + 
-//        "<span class=''>" + colhead3 + "</span></span></span></div>"
-//    };
+    var hotImg = "<img id='chili' src='" + IMAGE_SRC.COLD_CHILI  + "'>";
     var threecolLayout = function(quality, grade, hotness){
         return '<div class="container-fluid" style="padding-bottom:3%;">' + '<div class="col-xs-4 col-sm-4" >' + quality + '</div>' + 
             '<div class="col-xs-4 col-sm-4" >' + grade + '</div>' +
             '<div class="col-xs-4 col-sm-4" >' + hotness + '</div>' + '</div>';
     }
-    var profInfo = threecolLayout("Quality", "Grade", "Hotness")  + threecolLayout("4.1", "2.0", "3.1");
+    var profInfo = threecolLayout("Quality", "Grade", "Hotness")  + threecolLayout("4.1", "2.0", hotImg);
     professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
-    //console.log($("#opentip-2").width());
-    //console.log($("#opentip-3").width());
     professorTipPopUp.show();
     professorTipPopUp.hide();
+    //console.log($("[id^=opentip-] > canvas").width(535));
+    //console.log($("[id^=opentip]").width(535));
+    //console.log($("[class^=opentip]").width("100%"));
 };

@@ -37,5 +37,3 @@ rmptip(professorElement[0], jordanJohnson);
 rmptip(professorElement[1], jacksonDaniels);
 rmptip(professorElement[2], bananaSu);
 
-console.log($("#opentip-2 > canvas"));
-console.log(document.querySelector("#opentip-2 > canvas"));

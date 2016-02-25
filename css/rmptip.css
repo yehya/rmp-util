@@ -68,7 +68,7 @@
 }
 
 /* Quality & Grade text */
-#opentip-1 > div > div.ot-content > div:nth-child(2) > div {
+[id^=opentip] > div > div.ot-content > div:nth-child(2) > div {
     height: 100%;
 }
 

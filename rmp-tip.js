@@ -7,7 +7,7 @@
  * @param {element} professorElement
  * @param {object} prfData
  */
-var rmptip = function (professorElement, prfData) {
+window.rmptip = function (professorElement, prfData) {
 
     var IMAGE_SRC = {};
 
@@ -44,7 +44,7 @@ var rmptip = function (professorElement, prfData) {
 
  var tipTitle = '<div class="container-fluid"><div class="row"><div class="col-md-3 col-sm-3 col-xs-3">' + 
           '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + 
-          '<div class="col-md-9 col-sm-9 col-xs-9"><p>' + prfData.name + '</p></div></div>'
+          '<div class="col-md-9 col-sm-9 col-xs-9"><p>' + prfData.name + '</p></div></div>' ;
     
     var professorTipPopUp = new Opentip(professorElement, {
         title: tipTitle,
@@ -63,11 +63,7 @@ var rmptip = function (professorElement, prfData) {
         background: '#00adee'
     });
     
-    //$(professorTipPopUp).addClass("container-fluid");
     
-    
-    //console.log($("#opentip-1").width(100));
-   
     /**
      * This function takes in a rating value for a bar that is out of 5
      * and then uses that value to generate a customized bar.
@@ -206,4 +202,13 @@ var rmptip = function (professorElement, prfData) {
     //console.log($("[id^=opentip-] > canvas").width(535));
     //console.log($("[id^=opentip]").width(535));
     //console.log($("[class^=opentip]").width("100%"));
+    var changeRmpTip = function(){
+        var tipContentSize = $("[id^=opentip] > div")
+        var tipSize = $("[id^=opentip] > div");
+        var actualContentSiz = $("[id^=opentip] > div.opentip");
+        console.log(tipContentSize.width());
+        console.log(tipSize.width());
+        console.log(actualContentSiz);
+    }
+    changeRmpTip();
 };

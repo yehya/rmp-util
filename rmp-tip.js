@@ -93,8 +93,15 @@ window.rmptip = function (professorElement, prfData) {
 
         //console.log(colorChosen);
         /*progress bar for the professor attributes*/
-        var bar = '<div class="container-fluid">'+ trait + '<div class="container" id=\'entireBar\'><div class="container" id=\'progressBar\' style="width: ' + width + ';background:' + color +
-            ';"></div></div>' + '</div>';
+        var bar = '<div class="container-fluid">' +
+                      '<p class="" style="text-align: center;">' + trait + '<p>' +
+                      '<div class="progress">' +
+                        '<p class="traittext">'+ rating +'</p>' +
+                        '<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"' +  'style="width:' + width +';background:' + color + '">' +
+                          '<p class="progress-bar-text"></p>' +
+                        '</div>' +
+                      '</div>' +
+                    '</div>';
         
         return bar;
         
@@ -189,13 +196,35 @@ window.rmptip = function (professorElement, prfData) {
     profHelpfulness = profDescriptionHeading('profLine', prfData.help, 'Helpfulness', bars.helpfulness);
     profClarity = profDescriptionHeading('profLine', prfData.clarity, 'Clarity', bars.clarity);
     profEasiness = profDescriptionHeading('profLine', prfData.dificulty, 'Easiness', bars.easiness);
-    var hotImg = "<img id='chili' src='" + IMAGE_SRC.COLD_CHILI  + "'>";
+    var hotImg = "<img class='chili-background' id='chili' src='" + IMAGE_SRC.COLD_CHILI  + "'>";
     var threecolLayout = function(quality, grade, hotness){
-        return '<div class="container-fluid" style="padding-bottom:3%;">' + '<div class="col-xs-4 col-sm-4" >' + quality + '</div>' + 
-            '<div class="col-xs-4 col-sm-4" >' + grade + '</div>' +
-            '<div class="col-xs-4 col-sm-4" >' + hotness + '</div>' + '</div>';
+        
+        return '<div class="container-fluid">' + '<div class="col-xs-4 col-sm-4 heading-box">' + quality + '</div>' + 
+            '<div class="col-xs-4 col-sm-4 heading-box" >' + grade + '</div>' +
+            '<div class="col-xs-4 col-sm-4 heading-box" >' + hotness + '</div>' + '</div>';
     }
-    var profInfo = threecolLayout("Quality", "Grade", "Hotness")  + threecolLayout("4.1", "2.0", hotImg);
+    
+    var colorChooser = function(rating){
+        var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
+        var color = 'linear-gradient(to right, #b51b58 0%, #ef2e72 100%)';
+
+        /* Determines what color each progress bar is */
+        switch (true) {
+        case (rating >= 0 && rating <= 1):
+            color = BAR_COLOR_STYLES[0];
+            break;
+        case (rating > 1 && rating <= 3):
+            color = BAR_COLOR_STYLES[1];
+            break;
+        case (rating > 3 && rating <= 5):
+            color = BAR_COLOR_STYLES[2];
+            break;
+        }
+        return color;
+    }
+    console.log(colorChooser(prfData.quality));
+    var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  + 
+        threecolLayout("<p class='heading-text-ratings' style='background:"+colorChooser(prfData.quality)+";'>"+prfData.quality+"</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
     professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
     professorTipPopUp.show();
     professorTipPopUp.hide();

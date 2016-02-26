@@ -22,12 +22,12 @@ window.rmptip = function (professorElement, prfData) {
      * Image location sources
      * @type {string[]}
      */
-//    var HOTNESS_IMAGES = [
-//     '<img src=\'assets/cold-chili.png\' height=\'25\' width=\'25\'>',
-//     '<img src=\'assets/warm-chili.png\' height=\'25\' width=\'25\'>',
-//     '<img src=\'assets/steamy-chili.png\' height=\'25\' width=\'25\'>',
-//     '<img src=\'assets/scorching-chili.png\' height=\'25\' width=\'25\'>'
-//    ];
+    var HOTNESS_IMAGES = [
+     '<img class="chili-background" id="chili" src=\''+IMAGE_SRC.COLD_CHILI+'\' >',
+     '<img class="chili-background" id="chili" src=\''+IMAGE_SRC.WARM_CHILI+'\' >',
+     '<img class="chili-background" id="chili" src=\''+IMAGE_SRC.STEAMY_CHILI+'\' >',
+     '<img class="chili-background" id="chili" src=\''+IMAGE_SRC.SCORCHING_CHILI+'\' >'
+    ];
       
     /**
      * Constants for chili pepper image to use
@@ -196,7 +196,6 @@ window.rmptip = function (professorElement, prfData) {
     profHelpfulness = profDescriptionHeading('profLine', prfData.help, 'Helpfulness', bars.helpfulness);
     profClarity = profDescriptionHeading('profLine', prfData.clarity, 'Clarity', bars.clarity);
     profEasiness = profDescriptionHeading('profLine', prfData.dificulty, 'Easiness', bars.easiness);
-    var hotImg = "<img class='chili-background' id='chili' src='" + IMAGE_SRC.COLD_CHILI  + "'>";
     var threecolLayout = function(quality, grade, hotness){
         
         return '<div class="container-fluid">' + '<div class="col-xs-4 col-sm-4 heading-box">' + quality + '</div>' + 
@@ -224,7 +223,7 @@ window.rmptip = function (professorElement, prfData) {
     }
     console.log(colorChooser(prfData.quality));
     var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  + 
-        threecolLayout("<p class='heading-text-ratings' style='background:"+colorChooser(prfData.quality)+";'>"+prfData.quality+"</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
+        threecolLayout("<p class='heading-text-ratings' style='background:"+colorChooser(prfData.quality)+";'>"+prfData.quality+"</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", HOTNESS_IMAGES[prfData.chili]);
     professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
     professorTipPopUp.show();
     professorTipPopUp.hide();

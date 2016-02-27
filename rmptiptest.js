@@ -24,7 +24,7 @@ var jacksonDaniels = {
 var bananaSu = {
     name: 'Banana Su',
     quality: 3,
-    avg: 'C',
+    avg: 'D',
     chili: 3,
     help: 4,
     clarity: 3,
@@ -33,7 +33,7 @@ var bananaSu = {
 
 var professorElement = document.querySelectorAll('.testtext'); // professor test element
 
-rmptip(professorElement[0], jordanJohnson);
-rmptip(professorElement[1], jacksonDaniels);
-rmptip(professorElement[2], bananaSu);
+Rmptip(professorElement[0], jordanJohnson);
+Rmptip(professorElement[1], jacksonDaniels);
+Rmptip(professorElement[2], bananaSu);
 

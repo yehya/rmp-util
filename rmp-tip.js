@@ -208,7 +208,7 @@ window.Rmptip = function (professorElement, prfData) {
     * Creates the three column layout 
     */
 
-    var threecolLayout = function(quality, grade, hotness){        
+    var threecolLayout = function(quality, grade, hotness){
         return '<div class="container-fluid">' + '<div class="col-xs-4 col-sm-4 heading-box">' + quality + '</div>' + 
             '<div class="col-xs-4 col-sm-4 heading-box" >' + grade + '</div>' +
             '<div class="col-xs-4 col-sm-4 heading-box" >' + hotness + '</div>' + '</div>';
@@ -264,7 +264,6 @@ window.Rmptip = function (professorElement, prfData) {
     var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  + 
         		   threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
     
-
     professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
     professorTipPopUp.show();
     professorTipPopUp.hide();

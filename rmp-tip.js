@@ -265,19 +265,4 @@ window.Rmptip = function (professorElement, prfData) {
         		   threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
     
     professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
-    professorTipPopUp.show();
-    professorTipPopUp.hide();
-
-    /** 
-    * Resizes the Rmptip according to the size of the content
-    */
-
-    // var changeRmpTip = function(){
-    //     var tipContentSize = $("[id^=opentip] > div")
-    //     var tipSize = $("[id^=opentip] > div");
-    //     var actualContentSiz = $("[id^=opentip] > div.opentip");
-    //     console.log(tipContentSize.width());
-    //     console.log(tipSize.width());
-    //     console.log(actualContentSiz);
-    // }();
 };

@@ -9,7 +9,7 @@
   "description": "Tool tip that displays professors RMP details",
   "moduleType": [],
   "keywords": [
-    "rmptip"
+    "ratemyprofessor", "rmp", "tooltip", "tip"
   ],
   "license": "MIT",
   "private": true,

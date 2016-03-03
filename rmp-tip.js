@@ -125,7 +125,7 @@ window.Rmptip = function (professorElement, prfData) {
     var bars = {};
     bars.helpfulness = getBarHTML(prfData.help,"Helpfulness");
     bars.clarity = getBarHTML(prfData.clarity,"Clarity");
-    bars.easiness = getBarHTML(prfData.dificulty, "Easiness");
+    bars.easiness = getBarHTML(prfData.easiness, "Easiness");
 
     /**
     * Creates the project description headings, professor heading content and appends the progress bar
@@ -173,7 +173,7 @@ window.Rmptip = function (professorElement, prfData) {
                     message: 'Professor Clarity Range must be between 1 and 5'
                 };
             }
-            if (prfData.dificulty <= 0 || prfData.dificulty > 5) {
+            if (prfData.easiness <= 0 || prfData.easiness > 5) {
                 throw {
                     name: 'ProfessorEasinessOutOfRange',
                     message: 'Professor Easiness Range must be between 1 and 5'
@@ -198,7 +198,7 @@ window.Rmptip = function (professorElement, prfData) {
                 prfData.clarity = 'Invalid Data';
                 break;
             case 'ProfessorEasinessOutOfRange':
-                prfData.dificulty = 'Invalid Data';
+                prfData.easiness = 'Invalid Data';
                 break;
             }
         }

@@ -6,7 +6,7 @@ var jordanJohnson = {
     chili: 1,
     help: 4.3,
     clarity: 4.2,
-    difficulty: 2.3
+    easiness: 2.3
 };
 
 /* fake professor data for testing */
@@ -17,7 +17,7 @@ var jacksonDaniels = {
     chili: 2,
     help: 2,
     clarity: 2,
-    difficulty: 4
+    easiness: 4
 };
 
 /* fake professor data for testing */
@@ -28,7 +28,7 @@ var bananaSu = {
     chili: 3,
     help: 4,
     clarity: 3,
-    difficulty: 1
+    easiness: 1
 };
 
 var professorElement = document.querySelectorAll('.testtext'); // professor test element

@@ -9,7 +9,10 @@
   "description": "Tool tip that displays professors RMP details",
   "moduleType": [],
   "keywords": [
-    "ratemyprofessor", "rmp", "tooltip", "tip"
+    "ratemyprofessor",
+    "rmp",
+    "tooltip",
+    "tip"
   ],
   "license": "MIT",
   "private": true,
@@ -22,7 +25,8 @@
   ],
   "dependencies": {
     "opentip": "^2.4.6",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1"
   },
   "devDependencies": {
     "jscs": "^2.7.0"

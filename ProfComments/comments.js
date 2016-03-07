@@ -87,7 +87,6 @@ CommentArea.prototype.injectContent = function(imageURL,rating,commentText,foote
  */
 CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,footerText,tagText){
 	this.numOfComments++;
-	this.lastElement = this.numOfComments;
 	this.newCommentArea();
 	this.assignID();
 	this.buildCommentArea();
@@ -107,23 +106,45 @@ CommentArea.prototype.getImage = function(rating){
 };
 
 /**
+ * Slides the Entire Comment Area to the left
+ */
+CommentArea.prototype.slideLeft = function(elm){
+    elm.slideDown();
+    elm.animate({right: '2px'});
+};
+
+/**
+ * Slides the Entire Comment Area to the Right
+ */
+CommentArea.prototype.slideRight = function(elm){
+    elm.slideUp();
+    elm.animate({right: '-445px'});
+};
+
+/**
  *  Adds the slideEffect to the given Element
  */
 CommentArea.prototype.slideEffect = function(element){
       var entireBlock = $(this.entireBlock);
-      console.log(element);
-      element.bind("mouseover", function(e){
-          if(e.type == "mouseover"){
-            entireBlock.slideDown();
-            entireBlock.animate({right: '2px'});
-          }
+      var commentArea = this;
+      element.bind("mouseover", function(e){  
+            // console.log($("[id^=entire-block]").position());        
+            // $("[id^=entire-block]").each(function(i,eve){
+            //     var cmntArea = $(this);
+            //     if(cmntArea.position().left == 1407.8125){
+            //         // cmntArea.slideUp();
+            //         cmntArea.animate({right: '-445px'});
+            //     }
+            // });
+            // $("[id^=entire-block]").slideUp();
+            $("[id^=entire-block]").animate({right: '-445px'});
+            commentArea.slideLeft(entireBlock);
       });
       var xIcon;
       if(this.numOfComments == 1) xIcon = $(this.items[0]);
       else xIcon = $("#x"); 
       xIcon.click(function(){
-          entireBlock.slideUp();
-          entireBlock.animate({right: '-445px'});
+          commentArea.slideRight(entireBlock);
       });
 };
 

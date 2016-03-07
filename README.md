@@ -3,6 +3,6 @@
 Easy to use tool-tip for ratemyprofessor data.
 
 ###Installation
-``` bowern install rmp-tip --save```
+``` bower install rmp-tip --save```
 
 

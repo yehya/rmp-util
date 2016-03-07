@@ -1,0 +1,140 @@
+#entire-block {
+  bottom: 50px;
+  box-shadow: rgb(159, 159, 155) 4px 4px 4px -1px;
+  height: auto;
+  position: fixed;
+  right: -430px;
+  width: 22%;
+  z-index: 999;
+  background: rgb(215, 215, 210) none repeat scroll 0% 0% / auto padding-box border-box;
+  font: normal normal normal 16px/16px 'Times New Roman';
+  padding: 1%;
+  word-wrap: break-word;
+  overflow: auto;
+  max-height: 850px;
+}
+
+
+/*#DIV_1*/
+
+#A_2 {
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: none;
+  left: 5px;
+  position: fixed;
+  text-decoration: none solid rgb(255, 255, 255);
+  top: 43px;
+  z-index: 999;
+  border: 0px none rgb(255, 255, 255);
+  font: normal normal normal 25px/25px 'Source Sans Pro ExtraLight';
+  outline: rgb(255, 255, 255) none 0px;
+}
+
+
+/*#A_2*/
+
+#x {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: block;
+  float: right;
+  height: 44px;
+  text-decoration: none solid rgb(255, 255, 255);
+  width: 21px;
+  border: 0px none rgb(255, 255, 255);
+  font: normal normal normal 44px/44px 'Source Sans Pro ExtraLight';
+  margin: -11px 5px 0px;
+  outline: rgb(255, 255, 255) none 0px;
+}
+
+
+/*#A_3*/
+
+#entire-content-section {
+  width: 100%;
+  font: normal normal normal 16px/16px 'Times New Roman';
+  height: auto;
+}
+
+
+/*#DIV_4*/
+
+#comments-image {
+  display: block;
+  float: left;
+  height: auto;
+  width: 40px;
+  font: normal normal normal 16px/16px 'Times New Roman';
+  margin: 0px 10px 0px 0px;
+}
+
+
+/*#IMG_5*/
+
+#top-content-section {
+  height: auto;
+  width: 350px;
+  font: normal normal normal 16px/16px 'Times New Roman';
+}
+
+#content-header {
+  height: 56px;
+  width: 350px;
+  font: normal normal normal 28px/28px league_gothicregular;
+  margin: 0 auto;
+  padding-top: 1%;
+}
+
+
+/*#H3_7*/
+
+#middle-content {
+  font: normal normal normal 16px/16px 'Source Sans Pro';
+  line-height: 25px;
+}
+
+
+/*#SPAN_8*/
+
+#content-bottom {
+  color: rgb(0, 173, 237);
+  cursor: pointer;
+  display: block;
+  height: 12px;
+  letter-spacing: 1.6799999475479126px;
+  text-decoration: none solid rgb(0, 173, 237);
+  text-transform: uppercase;
+  width: 350px;
+  border: 0px none rgb(0, 173, 237);
+  font: normal normal normal 12px/12px 'Source Sans Pro Black';
+  margin: 11px 0px 0px;
+  outline: rgb(0, 173, 237) none 0px;
+}
+
+#comment-splitter {
+  margin-bottom: 5%;
+}
+
+#tag {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  color: rgb(121, 121, 121);
+  display: inline-block;
+  /*     float: left; */
+  height: auto;
+  text-align: left;
+  text-decoration: none solid rgb(121, 121, 121);
+  text-transform: uppercase;
+  width: auto;
+  background: rgb(245, 245, 238) none repeat scroll 0% 0% / auto padding-box border-box;
+  border: 0px none rgb(121, 121, 121);
+  font: normal normal bold 14px/14px 'Source Sans Pro';
+  margin: 2% 6px 1% 0;
+  outline: rgb(121, 121, 121) none 0px;
+  padding: 5px 7px;
+}
+
+
+/*#SPAN_1*/

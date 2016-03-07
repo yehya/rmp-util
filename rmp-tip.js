@@ -81,10 +81,12 @@ window.Rmptip = function (professorElement, prfData) {
     shadow: true,
     shadowBlur: 10,
     shadowOffset: [3, 3],
-    background: '#00adee'
+    background: '#00adee',
+    removeElementsOnHide: true,
+    cache: 'yes'
   });
-
-
+  
+  
   /**
    * This function takes in a rating value for a bar that is out of 5
    * and then uses that value to generate a customized bar.
@@ -276,4 +278,9 @@ window.Rmptip = function (professorElement, prfData) {
     threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
 
   professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
+  
+   professorTipPopUp.show();
+   professorTipPopUp.hide();
+   console.log($("[id^=opentip]").get(0));
+
 };

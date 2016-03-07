@@ -26,4 +26,16 @@ var commentArea = new CommentArea();
 commentArea.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
 commentArea.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
 commentArea.newComment(comment3.image,comment3.rating,comment3.text,comment3.footer,comment3.tag);
-commentArea.slideEffect($("#test-text"));   
+commentArea.slideEffect($("[id^=prof]"));
+
+// var commentArea1 = new CommentArea();
+// commentArea1.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
+// commentArea1.slideEffect($("#prof1"));
+
+// var commentArea2 = new CommentArea();
+// commentArea2.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
+// commentArea2.slideEffect($("#prof2"));
+
+// var commentArea3 = new CommentArea();
+// commentArea3.newComment(comment3.image,comment3.rating,comment3.text,comment3.footer,comment3.tag);
+// commentArea3.slideEffect($("#prof3"));   

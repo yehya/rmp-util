@@ -108,15 +108,19 @@ CommentArea.prototype.getImage = function(rating){
 
 CommentArea.prototype.slideEffect = function(element){
       var entireBlock = $(this.entireBlock);
-      element.on("mouseover mouseout", function(e){
+      console.log(element);
+      element.bind("mouseover", function(e){
           if(e.type == "mouseover"){
+            console.log("hi");
+            entireBlock.slideDown();
             entireBlock.animate({right: '2px'});
-          }else{
-            // entireBlock.css("right", "-430px");
-            // entireBlock.animate({left: '430px'});
           }
       });
-      //$(this.entireBlock).animate({right: '250px'});
+      var xIcon = $(this.items[0]);
+      xIcon.click(function(){
+          entireBlock.slideUp();
+          entireBlock.animate({right: '-445px'});
+      });
 };
 
 

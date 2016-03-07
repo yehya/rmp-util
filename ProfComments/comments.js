@@ -106,17 +106,21 @@ CommentArea.prototype.getImage = function(rating){
       return this.selectImage[rating];
 };
 
+/**
+ *  Adds the slideEffect to the given Element
+ */
 CommentArea.prototype.slideEffect = function(element){
       var entireBlock = $(this.entireBlock);
       console.log(element);
       element.bind("mouseover", function(e){
           if(e.type == "mouseover"){
-            console.log("hi");
             entireBlock.slideDown();
             entireBlock.animate({right: '2px'});
           }
       });
-      var xIcon = $(this.items[0]);
+      var xIcon;
+      if(this.numOfComments == 1) xIcon = $(this.items[0]);
+      else xIcon = $("#x"); 
       xIcon.click(function(){
           entireBlock.slideUp();
           entireBlock.animate({right: '-445px'});

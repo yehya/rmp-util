@@ -108,3 +108,7 @@
   outline: rgb(121, 121, 121) none 0px;
   padding: 5px 7px;
 }
+
+[id^=prof]{
+  width:50px;
+}

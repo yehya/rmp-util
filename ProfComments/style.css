@@ -1,3 +1,4 @@
+/* Entire Block for the comments on the side */
 #entire-block {
   bottom: 50px;
   box-shadow: rgb(159, 159, 155) 4px 4px 4px -1px;
@@ -14,27 +15,7 @@
   max-height: 850px;
 }
 
-
-/*#DIV_1*/
-
-#A_2 {
-  box-sizing: border-box;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  display: none;
-  left: 5px;
-  position: fixed;
-  text-decoration: none solid rgb(255, 255, 255);
-  top: 43px;
-  z-index: 999;
-  border: 0px none rgb(255, 255, 255);
-  font: normal normal normal 25px/25px 'Source Sans Pro ExtraLight';
-  outline: rgb(255, 255, 255) none 0px;
-}
-
-
-/*#A_2*/
-
+/* x icon */
 #x {
   color: rgb(255, 255, 255);
   cursor: pointer;
@@ -49,18 +30,14 @@
   outline: rgb(255, 255, 255) none 0px;
 }
 
-
-/*#A_3*/
-
+/* the section that contains all of the content */
 #entire-content-section {
   width: 100%;
   font: normal normal normal 16px/16px 'Times New Roman';
   height: auto;
 }
 
-
-/*#DIV_4*/
-
+/* header image */
 #comments-image {
   display: block;
   float: left;
@@ -70,15 +47,14 @@
   margin: 0px 10px 0px 0px;
 }
 
-
-/*#IMG_5*/
-
+/* top section content that contains the top and middle content */
 #top-content-section {
   height: auto;
   width: 350px;
   font: normal normal normal 16px/16px 'Times New Roman';
 }
 
+/* the top part tha contains the image rating and x icon*/
 #content-header {
   height: 56px;
   width: 350px;
@@ -87,17 +63,13 @@
   padding-top: 1%;
 }
 
-
-/*#H3_7*/
-
+/* the middle content that contains the comment */
 #middle-content {
   font: normal normal normal 16px/16px 'Source Sans Pro';
   line-height: 25px;
 }
 
-
-/*#SPAN_8*/
-
+/* the bottom content that contains the link */
 #content-bottom {
   color: rgb(0, 173, 237);
   cursor: pointer;
@@ -113,16 +85,17 @@
   outline: rgb(0, 173, 237) none 0px;
 }
 
+/* the horizontal separation between each comment */
 #comment-splitter {
   margin-bottom: 5%;
 }
 
+/* the tag below */
 #tag {
   border-collapse: collapse;
   box-sizing: border-box;
   color: rgb(121, 121, 121);
   display: inline-block;
-  /*     float: left; */
   height: auto;
   text-align: left;
   text-decoration: none solid rgb(121, 121, 121);
@@ -135,6 +108,3 @@
   outline: rgb(121, 121, 121) none 0px;
   padding: 5px 7px;
 }
-
-
-/*#SPAN_1*/

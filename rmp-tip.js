@@ -278,9 +278,5 @@ window.Rmptip = function (professorElement, prfData) {
     threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
 
   professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
-  
-   professorTipPopUp.show();
-   professorTipPopUp.hide();
-   console.log($("[id^=opentip]").get(0));
 
 };

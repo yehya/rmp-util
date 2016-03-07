@@ -118,14 +118,5 @@ CommentArea.prototype.slideEffect = function(element){
       });
       //$(this.entireBlock).animate({right: '250px'});
 };
-var commentArea = new CommentArea();
-var image = "POOR";
-var rating = "GOOD";
-var comment = "Attending class is not necessary, but reading the textbook is a must. I attended all of his classes for ECON1000 but didn't find it helpful, so I never went to class for ECON1010. Do your readings and study from the test banks. With some effort, you're guaranteed to get an A. Would take his class again.";
-var footer = "Find out what students are saying.";
-var tag = "GET READY TO READ";
-commentArea.newComment(image,rating,comment,footer,tag);
-commentArea.newComment(image,rating,comment,footer,tag);
-commentArea.newComment(image,rating,comment,footer,tag);
-commentArea.slideEffect($("#test-text"));
+
 

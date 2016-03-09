@@ -53,8 +53,7 @@ CommentArea.prototype.assignID = function(){
  * Assigns the new set of elements bootstrap Class Names
  */
 CommentArea.prototype.assignClassName = function(){
-    console.log("Assigning class Names");
-	this.entireBlock.className = 'container'; /* entire-block */
+	this.entireBlock.className = 'container-fluid'; /* entire-block */
 	this.items[0].className = ''; /* x icon */
 	this.items[1].className = ''; /* content-section */
 	this.items[2].className = ''; /* entire-content-section */
@@ -105,6 +104,13 @@ CommentArea.prototype.injectContent = function(imageURL,rating,commentText,foote
 };
 
 /**
+ * Sets the position of the Comment Area
+ */
+CommentArea.prototype.setPosition = function(){
+    // console.log($(this.entireBlock).height());
+    console.log($(window).innerHeight());
+}
+/**
  * Creates a new comment 
  */
 CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,footerText,tagText){
@@ -113,6 +119,7 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.assignID();
     this.assignClassName();
 	this.buildCommentArea();
+    this.setPosition();
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
 };
 

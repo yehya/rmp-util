@@ -131,15 +131,27 @@ window.Rmptip = function (professorElement, prfData) {
       '</div>';
     return bar;
   };
-
+  
   /**
-   * The bars
+   * Formats the professor attribute to a decimal place
+   * Ex: 4 would turn into 4.0
+   * @profAttr
+   */
+  var formatProfAttr = function(profAttr){
+      if(String(+profAttr).charAt(0) == profAttr){
+          return profAttr + ".0";
+      }else
+          return profAttr;
+  };
+  
+  /**
+   * The Progress Bars for Helpfulness, Clarity, and Easiness
    */
 
   var bars = {};
-  bars.helpfulness = getBarHTML(prfData.help,"Helpfulness");
-  bars.clarity = getBarHTML(prfData.clarity,"Clarity");
-  bars.easiness = getBarHTML(prfData.easiness, "Easiness");
+  bars.helpfulness = getBarHTML(formatProfAttr(prfData.help),"Helpfulness");
+  bars.clarity = getBarHTML(formatProfAttr(prfData.clarity),"Clarity");
+  bars.easiness = getBarHTML(formatProfAttr(prfData.easiness), "Easiness");
 
   /**
    * Creates the project description headings, professor heading content and appends the progress bar
@@ -273,10 +285,12 @@ window.Rmptip = function (professorElement, prfData) {
     return color;
   };
 
-
+  /**
+   * Displays the three columns for Quality, Grade, and Hotness
+   */
   var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  +
     threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
-
+   
   professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
 
 };

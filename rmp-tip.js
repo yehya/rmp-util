@@ -11,7 +11,7 @@
 window.Rmptip = function (professorElement, prfData) {
 
   var hotnessElement, tipTitle, hotImg;
-  var IMAGE_SRC, HOTNESS_IMAGES, HOTNESS, BAR_COLOR;
+  var IMAGE_SRC, HOTNESS_IMAGES, HOTNESS, BAR_COLOR; 
 
   /**
    * Sources for Smilebox, and all the chili images to use in base64 code
@@ -48,7 +48,6 @@ window.Rmptip = function (professorElement, prfData) {
 
   /**
    * Constants for bar colors
-   *
    * @type {{GOOD: number, AVERAGE: number, BAD: number}}
    */
   BAR_COLOR = {
@@ -60,7 +59,6 @@ window.Rmptip = function (professorElement, prfData) {
   /**
    * Creates a new instance of open tip which contains the pop up
    */
-
   tipTitle = '<div class="container-fluid"><div class="row">' + '<div class="col-md-3 col-sm-3 col-xs-3">' +
     '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + '<div class="col-md-9 col-sm-9 col-xs-9"><p>' +
     prfData.name + '</p></div></div>';
@@ -145,39 +143,23 @@ window.Rmptip = function (professorElement, prfData) {
   };
   
   /**
-   * The Progress Bars for Helpfulness, Clarity, and Easiness
-   */
-
-  var bars = {};
-  bars.helpfulness = getBarHTML(formatProfAttr(prfData.help),"Helpfulness");
-  bars.clarity = getBarHTML(formatProfAttr(prfData.clarity),"Clarity");
-  bars.easiness = getBarHTML(formatProfAttr(prfData.easiness), "Easiness");
-
-
-  /**
    * Validates that the professors data that is passed in and returns a professorDataError message
    */
 
   var validateProfessorData = function () {
     try {
-      if (prfData.chili < 0 || prfData.chili > 4) {
-        throw {
-          name: 'ProfessorHotnessOutOfRange',
-          message: 'Professor Hotness Range must be between 1 and 4'
-        };
-      }
       if (prfData.quality <= 0 || prfData.quality > 5) {
         throw {
           name: 'ProfessorQualityOutOfRange',
           message: 'Professor Quality Range must be between 1 and 5'
         };
       }
-      if (prfData.avg <= 0 || prfData.avg > 5) {
-        throw {
-          name: 'ProfessorAvgGradeOutOfRange',
-          message: 'Professor Average Grade Range must be between 1 and 5'
-        };
-      }
+    //   if (prfData.avg <= 0 || prfData.avg > 5) {
+    //     throw {
+    //       name: 'ProfessorAvgGradeOutOfRange',
+    //       message: 'Professor Average Grade Range must be between 1 and 5'
+    //     };
+    //   }
       if (prfData.help <= 0 || prfData.help > 5) {
         throw {
           name: 'ProfessorHelpfulnessOutOfRange',
@@ -220,7 +202,19 @@ window.Rmptip = function (professorElement, prfData) {
       }
     }
   }();
+  
+  /**
+   * The Progress Bars for Helpfulness, Clarity, and Easiness
+   */
+  var bars = {};
+  bars.helpfulness = getBarHTML(formatProfAttr(prfData.help),"Helpfulness");
+  bars.clarity = getBarHTML(formatProfAttr(prfData.clarity),"Clarity");
+  bars.easiness = getBarHTML(formatProfAttr(prfData.easiness), "Easiness");
 
+//   console.log(bars.helpfulness.search("Invalid Data"));
+//   if(bars.helpfulness.search("Invalid Data") != -1){
+//       bars.helpfulness = "";
+//   }
   /**
    * Creates the three column layout
    */
@@ -275,6 +269,7 @@ window.Rmptip = function (professorElement, prfData) {
     }
     return color;
   };
+  
 
   /**
    * Displays the three columns for Quality, Grade, and Hotness

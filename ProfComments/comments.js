@@ -33,6 +33,7 @@ CommentArea.prototype.newCommentArea = function(){
  * Assigns the new set of elements IDS
  */
 CommentArea.prototype.assignID = function(){
+    console.log("hello");
 	this.entireBlock.id = 'entire-block';
 	this.items[0].id = 'x';
 	this.items[1].id = 'content-section';
@@ -47,6 +48,27 @@ CommentArea.prototype.assignID = function(){
     this.items[10].id = 'hr-line';
     this.items[11].id = 'comment-splitter';
 };
+
+/**
+ * Assigns the new set of elements class names
+ */
+CommentArea.prototype.assignClassName = function(){
+    console.log("Assigning class names!");
+	this.entireBlock.className = 'container-fluid'; /* entire-block  */
+	this.items[0].className = 'x'; /* x */
+	this.items[1].className = 'content-section';
+	this.items[2].className = 'entire-content-section';
+    this.items[3].className = 'comments-image';
+    this.items[4].className = 'top-content-section';
+    this.items[5].className = 'content-header';
+    this.items[6].className = 'middle-content';
+    this.items[7].className = 'content-bottom';
+    this.items[8].className = 'tag-section';
+    this.items[9].className = 'tag';
+    this.items[10].className = 'hr-line';
+    this.items[11].className = 'comment-splitter';
+};
+
 
 /**
 * Builds the DOM relationship for each comment section
@@ -89,6 +111,7 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.numOfComments++;
 	this.newCommentArea();
 	this.assignID();
+    this.assignClassName();
 	this.buildCommentArea();
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
 };

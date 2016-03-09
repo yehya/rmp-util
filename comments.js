@@ -48,6 +48,28 @@ CommentArea.prototype.assignID = function(){
     this.items[11].id = 'comment-splitter';
 };
 
+
+/**
+ * Assigns the new set of elements bootstrap Class Names
+ */
+CommentArea.prototype.assignClassName = function(){
+    console.log("Assigning class Names");
+	this.entireBlock.className = 'container'; /* entire-block */
+	this.items[0].className = ''; /* x icon */
+	this.items[1].className = ''; /* content-section */
+	this.items[2].className = ''; /* entire-content-section */
+    this.items[3].className = ''; /* comments-image */
+    this.items[4].className = ''; /* top-content-section */
+    this.items[5].className = 'row'; /* content-header */
+    this.items[6].className = ''; /* middle-content */
+    this.items[7].className = ''; /* content-bottom */
+    this.items[8].className = ''; /* tag-section */
+    this.items[9].className = ''; /* tag */
+    this.items[10].className = ''; /* hr-line */
+    this.items[11].className = ''; /* comment-splitter */
+};
+
+
 /**
 * Builds the DOM relationship for each comment section
 */
@@ -89,6 +111,7 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.numOfComments++;
 	this.newCommentArea();
 	this.assignID();
+    this.assignClassName();
 	this.buildCommentArea();
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
 };

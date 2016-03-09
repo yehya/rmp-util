@@ -184,6 +184,7 @@
   width: 100%;
   /*font: normal normal normal 16px/16px;*/
   height: auto;
+  font-family: Gothee;
 }
 
 /* header image */
@@ -194,17 +195,18 @@
   width: 40px;
   /*font: normal normal normal 16px/16px;*/
   border: 1px solid #000;
-  border-radius:8px;
+  border-radius:7px;
   margin: 0px 10px 0px 0px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 /* top section content that contains the top and middle content */
 #top-content-section {
   height: auto;
-  width: 350px;
+  width: 100%;
   /*font: normal normal normal 16px/16px;*/
   /*font-family: Gothee;*/
-  font-size: 18px;
+  font-size: 130%;
 }
 
 /* the top part tha contains the image rating and x icon*/
@@ -221,6 +223,7 @@
   /*font-family: Gothee;*/
   /*font: normal normal normal 16px/16px;*/
   line-height: 25px;
+  word-wrap: break-word; 
 }
 
 /* the bottom content that contains the link */
@@ -257,10 +260,11 @@
   width: auto;
   background: rgb(245, 245, 238) none repeat scroll 0% 0% / auto padding-box border-box;
   border: 0px none rgb(121, 121, 121);
-  /*font: normal normal bold 14px/14px 'Source Sans Pro';*/
+  font: normal normal bold 14px/14px 'Source Sans Pro';
   margin: 2% 6px 1% 0;
   outline: rgb(121, 121, 121) none 0px;
   padding: 5px 7px;
+  box-shadow: 4px 4px 4px #888888;
 }
 
 [id^=prof]{

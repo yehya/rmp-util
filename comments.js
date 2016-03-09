@@ -30,13 +30,6 @@ CommentArea.prototype.newCommentArea = function(){
 };
 
 /**
- * Adds css
- */
-CommentArea.prototype.addCSS = function () {
-	this.entireBlock.style.width = "93%";
-};
-
-/**
  * Assigns the new set of elements IDS
  */
 CommentArea.prototype.assignID = function(){
@@ -141,6 +134,9 @@ CommentArea.prototype.getImage = function(rating){
 CommentArea.prototype.slideLeft = function(elm){
 	elm.slideDown();
 	elm.animate({right: '2px'});
+	if (elm.height() > 0.85*$(document).height()) {
+		elm.height(0.85*$(document).height());
+	}
 };
 
 /**

@@ -86,7 +86,7 @@
     position: absolute;
     float:left;
     font-size: 23px;
-    margin-left: -13%; /* Old value was -10 */
+    margin-left: -10%; /* Old value was -10 */
 }
 
 
@@ -134,4 +134,8 @@
 
 .prof-span {
 	font-size:18px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7ac6570042d884405d6b922353cd26260d69a291

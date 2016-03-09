@@ -1,6 +1,7 @@
+
 /* ======================================================
-= Entire Block for the Comments Section on the side  =
-======================================================
+= Entire Block for the Comments Section on the side     =
+=========================================================
 */
 #entire-block {
     bottom: 50px;
@@ -73,11 +74,11 @@
 
 /* the top part tha contains the image rating and x icon*/
 #content-header {
-    height: 56px;
-    width: 350px;
-    /*font: normal normal normal 28px/28px league_gothicregular;*/
-    margin: 0 auto;
-    padding-top: 1%;
+  height: 56px;
+  width: 350px;
+  /*font: normal normal normal 28px/28px league_gothicregular;*/
+  margin: 0 auto;
+  padding-top: 1%;
 }
 
 /* the middle content that contains the comment */
@@ -90,44 +91,45 @@
 
 /* the bottom content that contains the link */
 #content-bottom {
-    color: rgb(0, 173, 237);
-    cursor: pointer;
-    display: block;
-    height: 12px;
-    letter-spacing: 1.6799999475479126px;
-    text-decoration: none solid rgb(0, 173, 237);
-    text-transform: uppercase;
-    width: 350px;
-    border: 0px none rgb(0, 173, 237);
-    /*font: normal normal normal 12px/12px 'Source Sans Pro Black';*/
-    margin: 11px 0px 0px;
-    outline: rgb(0, 173, 237) none 0px;
+  color: rgb(0, 173, 237);
+  cursor: pointer;
+  display: block;
+  height: 12px;
+  letter-spacing: 1.6799999475479126px;
+  text-decoration: none solid rgb(0, 173, 237);
+  text-transform: uppercase;
+  width: 350px;
+  border: 0px none rgb(0, 173, 237);
+  /*font: normal normal normal 12px/12px 'Source Sans Pro Black';*/
+  margin: 11px 0px 0px;
+  outline: rgb(0, 173, 237) none 0px;
 }
 
 /* the horizontal separation between each comment */
 #comment-splitter {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 /* the tag below */
 #tag {
-    border-collapse: collapse;
-    box-sizing: border-box;
-    color: rgb(121, 121, 121);
-    display: inline-block;
-    height: auto;
-    text-align: left;
-    text-decoration: none solid rgb(121, 121, 121);
-    text-transform: uppercase;
-    width: auto;
-    background: rgb(245, 245, 238) none repeat scroll 0% 0% / auto padding-box border-box;
-    border: 0px none rgb(121, 121, 121);
-    font: normal normal bold 14px/14px 'Source Sans Pro';
-    margin: 2% 6px 1% 0;
-    outline: rgb(121, 121, 121) none 0px;
-    padding: 5px 7px;
-    box-shadow: 4px 4px 4px #888888;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  color: rgb(121, 121, 121);
+  display: inline-block;
+  height: auto;
+  text-align: left;
+  text-decoration: none solid rgb(121, 121, 121);
+  text-transform: uppercase;
+  width: auto;
+  background: rgb(245, 245, 238) none repeat scroll 0% 0% / auto padding-box border-box;
+  border: 0px none rgb(121, 121, 121);
+  font: normal normal bold 14px/14px 'Source Sans Pro';
+  margin: 2% 6px 1% 0;
+  outline: rgb(121, 121, 121) none 0px;
+  padding: 5px 7px;
+  box-shadow: 4px 4px 4px #888888;
 }
+
 
 [id^=prof]{
     width:450px;

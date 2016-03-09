@@ -53,8 +53,7 @@ CommentArea.prototype.assignID = function(){
  * Assigns the new set of elements bootstrap Class Names
  */
 CommentArea.prototype.assignClassName = function(){
-	console.log("Assigning class Names");
-	this.entireBlock.className = 'container'; /* entire-block */
+	this.entireBlock.className = 'container-fluid'; /* entire-block */
 	this.items[0].className = ''; /* x icon */
 	this.items[1].className = ''; /* content-section */
 	this.items[2].className = ''; /* entire-content-section */
@@ -105,7 +104,14 @@ CommentArea.prototype.injectContent = function(imageURL,rating,commentText,foote
 };
 
 /**
- * Creates a new comment
+ * Sets the position of the Comment Area
+ */
+CommentArea.prototype.setPosition = function(){
+    // console.log($(this.entireBlock).height());
+    console.log($(window).innerHeight());
+}
+/**
+ * Creates a new comment 
  */
 CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,footerText,tagText){
 	this.numOfComments++;
@@ -113,6 +119,7 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.assignID();
 	this.assignClassName();
 	this.buildCommentArea();
+    this.setPosition();
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
 };
 
@@ -154,15 +161,6 @@ CommentArea.prototype.slideEffect = function(element){
 	var entireBlock = $(this.entireBlock);
 	var commentArea = this;
 	element.bind("mouseover", function(e){
-		// console.log($("[id^=entire-block]").position());
-		// $("[id^=entire-block]").each(function(i,eve){
-		//     var cmntArea = $(this);
-		//     if(cmntArea.position().left == 1407.8125){
-		//         // cmntArea.slideUp();
-		//         cmntArea.animate({right: '-445px'});
-		//     }
-		// });
-		// $("[id^=entire-block]").slideUp();
 		$("[id^=entire-block]").animate({right: '-445px'});
 		commentArea.slideLeft(entireBlock);
 	});

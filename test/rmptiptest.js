@@ -72,7 +72,7 @@ commentArea2.slideEffect($("#prof2"));
 var commentArea3 = new CommentArea();
 commentArea3.newComment(comment3.image,comment3.rating,comment3.text,comment3.footer,comment3.tag);
 commentArea3.slideEffect($("#prof3"));
-  
+
 var professorElement = $('[id^=prof]'); // professor test element
 Rmptip(professorElement[0], jordanJohnson);
 Rmptip(professorElement[1], jacksonDaniels);

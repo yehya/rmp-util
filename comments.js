@@ -107,11 +107,11 @@ CommentArea.prototype.injectContent = function(imageURL,rating,commentText,foote
  * Sets the position of the Comment Area
  */
 CommentArea.prototype.setPosition = function(){
-    // console.log($(this.entireBlock).height());
-    console.log($(window).innerHeight());
+	// console.log($(this.entireBlock).height());
+	console.log($(window).innerHeight());
 }
 /**
- * Creates a new comment 
+ * Creates a new comment
  */
 CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,footerText,tagText){
 	this.numOfComments++;
@@ -119,7 +119,7 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.assignID();
 	this.assignClassName();
 	this.buildCommentArea();
-    this.setPosition();
+	this.setPosition();
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
 };
 

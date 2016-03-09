@@ -153,15 +153,6 @@ window.Rmptip = function (professorElement, prfData) {
   bars.clarity = getBarHTML(formatProfAttr(prfData.clarity),"Clarity");
   bars.easiness = getBarHTML(formatProfAttr(prfData.easiness), "Easiness");
 
-  /**
-   * Creates the project description headings, professor heading content and appends the progress bar
-   */
-
-  var profDescriptionHeading = function (profClass, profAttribute, profAttributeTitle, progressBar) {
-    return '<div class="col-sm-3">' + '<span class="prof-span"' + profClass + '>' + '<h2 class=\'profheading\'>' + profAttributeTitle + '</h2>' +
-      '<h2 class=\'profheadingcontent\'>' + profAttribute + progressBar + '</h2>' + '</span>' + '</div>';
-  };
-
 
   /**
    * Validates that the professors data that is passed in and returns a professorDataError message

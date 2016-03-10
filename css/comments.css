@@ -4,7 +4,7 @@
 =========================================================
 */
 #entire-block {
-    bottom: 50px;
+    bottom: 5%;
     box-shadow: rgb(159, 159, 155) 4px 4px 4px -1px;
     height: auto;
     position: fixed;
@@ -13,6 +13,8 @@
     z-index: 999;
     border:2px solid black;
     border-radius: 15px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
     background:#00adee;
     font-family: Gothee,cursive,"Source Sans Pro Black", serif;
     font-weight: 400;

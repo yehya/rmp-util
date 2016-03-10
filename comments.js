@@ -15,7 +15,9 @@ var CommentArea = function(){
 CommentArea.prototype.newCommentArea = function(){
 	this.singleComment = {};
     this.allComments.push(this.singleComment);
-	this.singleComment.xIcon = document.createElement('a');
+    if(this.numOfComments == 1){
+	   this.singleComment.xIcon = document.createElement('a');
+	}
 	this.singleComment.contentSection = document.createElement('div');
 	this.singleComment.entireContentSection = document.createElement('div');
 	this.singleComment.commentsImage = document.createElement('img');
@@ -35,7 +37,9 @@ CommentArea.prototype.newCommentArea = function(){
  */
 CommentArea.prototype.assignID = function(){
 	this.entireBlock.id = 'entire-block';
-	this.singleComment.xIcon.id = 'x';
+    if(this.numOfComments == 1){
+	   this.singleComment.xIcon.id = 'x';
+	}
 	this.singleComment.contentSection.id = 'content-section';
 	this.singleComment.entireContentSection.id = 'entire-content-section';
 	this.singleComment.commentsImage.id = 'comments-image';
@@ -55,7 +59,7 @@ CommentArea.prototype.assignID = function(){
  */
 CommentArea.prototype.assignClassName = function(){
 	this.entireBlock.className = 'container-fluid'; /* entire-block */
-	this.singleComment.xIcon.className = ''; /* x icon */
+	// this.singleComment.xIcon.className = ''; /* x icon */
 	this.singleComment.contentSection.className = ''; /* content-section */
 	this.singleComment.entireContentSection.className = ''; /* entire-content-section */
 	this.singleComment.commentsImage.className = ''; /* comments-image */
@@ -113,10 +117,16 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.assignID();
 	this.assignClassName();
 	this.buildCommentArea();
-    this.com
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
+    this.addIconClick();
 };
 
+CommentArea.prototype.addIconClick = function(){
+    var _this = this;
+    $(this.singleComment.xIcon).click(function(){
+		_this.slideRight($(_this.entireBlock));
+	});
+};
 /**
  * Obtains the Image to Inject
  */
@@ -157,12 +167,6 @@ CommentArea.prototype.slideEffect = function(element){
 	element.bind("mouseover", function(e){
 		$("[id^=entire-block]").animate({right: '-445px'});
 		commentArea.slideLeft(entireBlock);
-	});
-	var xIcon;
-	if(this.numOfComments == 1) xIcon = $(this.singleComment.xIcon);
-	else xIcon = $("#x");
-	xIcon.click(function(){
-		commentArea.slideRight(entireBlock);
 	});
 };
 

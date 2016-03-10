@@ -132,7 +132,7 @@ CommentArea.prototype.getImage = function(rating){
  */
 CommentArea.prototype.slideLeft = function(elm){
 	elm.slideDown();
-	elm.animate({right: '1px'});
+	elm.animate({right: '-1px'});
 	if (elm.height() > 0.85* $(document).height()) {
 		elm.height(0.85* $(document).height());
 	}

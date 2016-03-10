@@ -67,6 +67,7 @@ commentArea1.slideEffect($("#prof1"));
 
 var commentArea2 = new CommentArea();
 commentArea2.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
+commentArea2.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
 commentArea2.slideEffect($("#prof2"));
 
 var commentArea3 = new CommentArea();

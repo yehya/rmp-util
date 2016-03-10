@@ -104,13 +104,6 @@ CommentArea.prototype.injectContent = function(imageURL,rating,commentText,foote
 };
 
 /**
- * Sets the position of the Comment Area
- */
-CommentArea.prototype.setPosition = function(){
-	// console.log($(this.entireBlock).height());
-	console.log($(window).innerHeight());
-}
-/**
  * Creates a new comment
  */
 CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,footerText,tagText){
@@ -119,7 +112,6 @@ CommentArea.prototype.newComment = function(ratingLevel,rating,commentText,foote
 	this.assignID();
 	this.assignClassName();
 	this.buildCommentArea();
-	this.setPosition();
 	this.injectContent(this.getImage(ratingLevel),rating,commentText,footerText,tagText);
 };
 
@@ -140,9 +132,9 @@ CommentArea.prototype.getImage = function(rating){
  */
 CommentArea.prototype.slideLeft = function(elm){
 	elm.slideDown();
-	elm.animate({right: '2px'});
-	if (elm.height() > 0.85*$(document).height()) {
-		elm.height(0.85*$(document).height());
+	elm.animate({right: '1px'});
+	if (elm.height() > 0.85* $(document).height()) {
+		elm.height(0.85* $(document).height());
 	}
 };
 

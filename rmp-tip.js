@@ -9,6 +9,10 @@
  */
 window.Rmptip = function (professorElement, prfData) {
 
+  ///////////////////
+  /// DEFINITIONS ///
+  ///////////////////
+
   var hotnessElement, tipTitle, hotImg;
   var IMAGE_SRC, HOTNESS_IMAGES, HOTNESS, BAR_COLOR;
 
@@ -55,15 +59,16 @@ window.Rmptip = function (professorElement, prfData) {
     BAD: 2
   };
 
-  /**
-   * Creates a new instance of open tip which contains the pop up
-   */
+
   tipTitle = '<div class="container-fluid"><div class="row">' + '<div class="col-md-3 col-sm-3 col-xs-3">' +
     '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + '<div class="col-md-9 col-sm-9 col-xs-9"><p>' +
     prfData.name + '</p></div></div>';
 
+  /*
+   * Creates a new instance of open tip which contains the pop up
+   */
   var professorTipPopUp = new Opentip(professorElement,{
-    /**
+    /*
      * Html for the title and content is not escaped for styling
      */
     title: tipTitle,

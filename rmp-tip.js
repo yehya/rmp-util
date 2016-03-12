@@ -7,11 +7,10 @@
  * @param {element} professorElement
  * @param {object} prfData
  */
-
 window.Rmptip = function (professorElement, prfData) {
 
   var hotnessElement, tipTitle, hotImg;
-  var IMAGE_SRC, HOTNESS_IMAGES, HOTNESS, BAR_COLOR; 
+  var IMAGE_SRC, HOTNESS_IMAGES, HOTNESS, BAR_COLOR;
 
   /**
    * Sources for Smilebox, and all the chili images to use in base64 code
@@ -83,8 +82,8 @@ window.Rmptip = function (professorElement, prfData) {
     removeElementsOnHide: true,
     cache: 'yes'
   });
-  
-  
+
+
   /**
    * This function takes in a rating value for a bar that is out of 5
    * and then uses that value to generate a customized bar.
@@ -93,7 +92,6 @@ window.Rmptip = function (professorElement, prfData) {
    * @param {string} rating of the trait
    * @returns {string}
    */
-
   var getBarHTML = function (rating, trait) {
     var widthPX = (rating / 5) * 200;
     var width = widthPX + 'px';
@@ -129,23 +127,22 @@ window.Rmptip = function (professorElement, prfData) {
       '</div>';
     return bar;
   };
-  
+
   /**
    * Formats the professor attribute to a decimal place
    * Ex: 4 would turn into 4.0
    * @profAttr
    */
   var formatProfAttr = function(profAttr){
-      if(String(+profAttr).charAt(0) == profAttr){
-          return profAttr + ".0";
-      }else
-          return profAttr;
+    if(String(+profAttr).charAt(0) == profAttr){
+      return profAttr + ".0";
+    }else
+      return profAttr;
   };
-  
+
   /**
    * Validates that the professors data that is passed in and returns a professorDataError message
    */
-
   var validateProfessorData = function () {
     try {
       if (prfData.quality <= 0 || prfData.quality > 5) {
@@ -154,12 +151,12 @@ window.Rmptip = function (professorElement, prfData) {
           message: 'Professor Quality Range must be between 1 and 5'
         };
       }
-    //   if (prfData.avg <= 0 || prfData.avg > 5) {
-    //     throw {
-    //       name: 'ProfessorAvgGradeOutOfRange',
-    //       message: 'Professor Average Grade Range must be between 1 and 5'
-    //     };
-    //   }
+      if (prfData.avg <= 0 || prfData.avg > 5) {
+        throw {
+          name: 'ProfessorAvgGradeOutOfRange',
+          message: 'Professor Average Grade Range must be between 1 and 5'
+        };
+      }
       if (prfData.help <= 0 || prfData.help > 5) {
         throw {
           name: 'ProfessorHelpfulnessOutOfRange',
@@ -202,7 +199,7 @@ window.Rmptip = function (professorElement, prfData) {
       }
     }
   }();
-  
+
   /**
    * The Progress Bars for Helpfulness, Clarity, and Easiness
    */
@@ -211,24 +208,18 @@ window.Rmptip = function (professorElement, prfData) {
   bars.clarity = getBarHTML(formatProfAttr(prfData.clarity),"Clarity");
   bars.easiness = getBarHTML(formatProfAttr(prfData.easiness), "Easiness");
 
-//   console.log(bars.helpfulness.search("Invalid Data"));
-//   if(bars.helpfulness.search("Invalid Data") != -1){
-//       bars.helpfulness = "";
-//   }
   /**
    * Creates the three column layout
    */
-
   var threecolLayout = function(quality, grade, hotness){
     return '<div class="container-fluid">' + '<div class="col-xs-4 col-sm-4 heading-box">' + quality + '</div>' +
       '<div class="col-xs-4 col-sm-4 heading-box" >' + grade + '</div>' +
       '<div class="col-xs-4 col-sm-4 heading-box" >' + hotness + '</div>' + '</div>';
-  }
+  };
 
   /**
    * Chooses the color depending  on the rating
    */
-
   var colorChooser = function(rating){
     var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
     var color = 'linear-gradient(to right, #b51b58 0%, #ef2e72 100%)';
@@ -240,15 +231,12 @@ window.Rmptip = function (professorElement, prfData) {
       switch (true) {
         case (rating > 3 && rating <= 5):
           color = BAR_COLOR_STYLES[BAR_COLOR.GOOD];
-          hotImg = HOTNESS_IMAGES[HOTNESS.SCORCHING];
           break;
         case (rating > 1 && rating <= 3):
           color = BAR_COLOR_STYLES[BAR_COLOR.AVERAGE];
-          hotImg = HOTNESS_IMAGES[HOTNESS.STEAMY];
           break;
         default:
           color = BAR_COLOR_STYLES[BAR_COLOR.BAD];
-          hotImg = HOTNESS_IMAGES[HOTNESS.WARM];
       }
     } else {
       switch (rating) {
@@ -269,14 +257,27 @@ window.Rmptip = function (professorElement, prfData) {
     }
     return color;
   };
-  
 
-  /**
-   * Displays the three columns for Quality, Grade, and Hotness
-   */
-  var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  +
-    threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
-   
-  professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
+  var main = function () {
+
+    // Set the hotImg
+    if (typeof prfData.chili === "number") {
+      hotImg = HOTNESS_IMAGES[prfData.chili];
+    } else {
+      hotImg = HOTNESS_IMAGES[HOTNESS.COLD];
+    }
+
+    /**
+     * Displays the three columns for Quality, Grade, and Hotness
+     */
+    var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  +
+      threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
+
+    professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
+  };
+
+  /// MAIN ///
+
+  main();
 
 };

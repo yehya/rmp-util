@@ -54,61 +54,15 @@ window.Rmptip = function (professorElement, prfData) {
    * @type {{GOOD: number, AVERAGE: number, BAD: number}}
    */
   BAR_COLOR = {
-    GOOD: 0,
+    GOOD: 2,
     AVERAGE: 1,
-    BAD: 2
+    BAD: 0
   };
 
 
   tipTitle = '<div class="container-fluid"><div class="row">' + '<div class="col-md-3 col-sm-3 col-xs-3">' +
     '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + '<div class="col-md-9 col-sm-9 col-xs-9"><p>' +
     prfData.name + '</p></div></div>';
-
-  /**
-   * This function takes in a rating value for a bar that is out of 5
-   * and then uses that value to generate a customized bar.
-   *
-   * @param {number} trait
-   * @param {string} rating of the trait
-   * @returns {string} containing the css for the color
-   */
-  var getBarHTML = function (rating, trait) {
-    var widthPX = (rating / 5) * 200;
-    var width = widthPX + 'px';
-    var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
-    var color = null;
-
-    /**
-     * Determines what color each progress bar is
-     */
-    switch (true) {
-      case (rating >= 0 && rating <= 1):
-        color = BAR_COLOR_STYLES[0];
-        break;
-      case (rating > 1 && rating <= 3):
-        color = BAR_COLOR_STYLES[1];
-        break;
-      case (rating > 3 && rating <= 5):
-        color = BAR_COLOR_STYLES[2];
-        break;
-      default:
-        color = BAR_COLOR_STYLES[0];
-    }
-
-    /**
-     * Progress bar for the professor attributes
-     */
-    var bar = '<div class="container-fluid">' +
-      '<p class ="trait">' + trait + '<p>' +
-      '<div class="progress">' +
-      '<p class="traittext">'+ rating +'</p>' +
-      '<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"' +  'style="width:' + width +';background:' + color + '">' +
-      '<p class="progress-bar-text"></p>' +
-      '</div>' +
-      '</div>' +
-      '</div>';
-    return bar;
-  };
 
   /**
    * Formats the professor attribute to a decimal place
@@ -183,14 +137,6 @@ window.Rmptip = function (professorElement, prfData) {
   }();
 
   /**
-   * The Progress Bars for Helpfulness, Clarity, and Easiness
-   */
-  var bars = {};
-  bars.helpfulness = getBarHTML(formatProfAttr(prfData.help),"Helpfulness");
-  bars.clarity = getBarHTML(formatProfAttr(prfData.clarity),"Clarity");
-  bars.easiness = getBarHTML(formatProfAttr(prfData.easiness), "Easiness");
-
-  /**
    * Creates the three column layout
    */
   var threecolLayout = function(quality, grade, hotness){
@@ -205,7 +151,7 @@ window.Rmptip = function (professorElement, prfData) {
   var getColor = function(rating){
     // Holds all of the colors we use
     var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
-    
+
     // If the rating is a number,
     if (typeof rating === "number") {
       switch (true) {
@@ -233,6 +179,33 @@ window.Rmptip = function (professorElement, prfData) {
     }
   };
 
+  /**
+   * This function takes in a rating value for a bar that is out of 5
+   * and then uses that value to generate a customized bar.
+   *
+   * @param {number} trait
+   * @param {string} rating of the trait
+   * @returns {string} containing the css for the color
+   */
+  var getBarHTML = function (rating, trait) {
+    // Calculate the width in pixels
+    var widthPX = (rating / 5) * 200;
+    // Change it to a string
+    var width = widthPX + 'px';
+    // Get the CSS background clor
+    var color = getColor(rating);
+
+    return '<div class="container-fluid">' +
+      '<p class ="trait">' + trait + '<p>' +
+      '<div class="progress">' +
+      '<p class="traittext">'+ formatProfAttr(rating) +'</p>' +
+      '<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"' +  'style="width:' + width +';background:' + color + '">' +
+      '<p class="progress-bar-text"></p>' +
+      '</div>' +
+      '</div>' +
+      '</div>';
+  };
+
   var main = function () {
     /*
      * Creates a new instance of open tip which contains the pop up
@@ -257,6 +230,14 @@ window.Rmptip = function (professorElement, prfData) {
       removeElementsOnHide: true,
       cache: 'yes'
     });
+
+    /**
+     * The Progress Bars for Helpfulness, Clarity, and Easiness
+     */
+    var bars = {};
+    bars.helpfulness = getBarHTML(prfData.help,"Helpfulness");
+    bars.clarity = getBarHTML(prfData.clarity,"Clarity");
+    bars.easiness = getBarHTML(prfData.easiness, "Easiness");
 
     // Set the chiliImgHTML
     if (typeof prfData.chili === "number") {

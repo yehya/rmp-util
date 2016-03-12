@@ -3,7 +3,7 @@ var jordanJohnson = {
     name: 'Jordan Johnson',
     quality: 4.3,
     avg: 'B',
-     chili: 3,
+     chili: 0,
     help: 4.3,
     clarity: 4.2,
     easiness: 2.3
@@ -14,7 +14,7 @@ var jacksonDaniels = {
     name: 'Jackson Daniels Morgan Arouga ',
     quality: 2,
     avg: 'C',
-     chili: 2,
+     chili: 0,
     help: 2,
     clarity: 2,
     easiness: 4

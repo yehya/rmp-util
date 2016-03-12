@@ -152,12 +152,17 @@ window.Rmptip = function (professorElement, prfData) {
     // Holds all of the colors we use
     var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
 
+    var CUTOFFS = {
+      GOOD: 3.7,
+      AVERAGE: 2.3
+    };
+
     // If the rating is a number,
     if (typeof rating === "number") {
       switch (true) {
-        case (rating > 3 && rating <= 5):
+        case (rating > CUTOFFS.GOOD):
           return BAR_COLOR_STYLES[BAR_COLOR.GOOD];
-        case (rating > 1 && rating <= 3):
+        case (rating > CUTOFFS.AVERAGE):
           return BAR_COLOR_STYLES[BAR_COLOR.AVERAGE];
         default:
           return BAR_COLOR_STYLES[BAR_COLOR.BAD];

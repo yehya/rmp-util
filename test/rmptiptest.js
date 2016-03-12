@@ -55,27 +55,13 @@ var comment3 = {
     tag: "TOUGH GRADER (10)"
 };
 
-/* Testing for multiple comments with multiple Comment Areas */
-var commentArea1 = new CommentArea();
-commentArea1.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
-commentArea1.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
-commentArea1.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
-commentArea1.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
-commentArea1.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
-commentArea1.newComment(comment1.image,comment1.rating,comment1.text,comment1.footer,comment1.tag);
-commentArea1.slideEffect($("#prof1"));
-
-var commentArea2 = new CommentArea();
-commentArea2.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
-commentArea2.newComment(comment2.image,comment2.rating,comment2.text,comment2.footer,comment2.tag);
-commentArea2.slideEffect($("#prof2"));
-
-var commentArea3 = new CommentArea();
-commentArea3.newComment(comment3.image,comment3.rating,comment3.text,comment3.footer,comment3.tag);
-commentArea3.slideEffect($("#prof3"));
-
 var professorElement = $('[id^=prof]'); // professor test element
 Rmptip(professorElement[0], jordanJohnson);
 Rmptip(professorElement[1], jacksonDaniels);
 Rmptip(professorElement[2], bananaSu);
+
+/* Testing for multiple comments with multiple Comment Areas */
+var commentArea1 = new CommentArea($("#prof1"),[comment1,comment2,comment3]);
+var commentArea2 = new CommentArea($("#prof2"),[comment2, comment2]);
+var commentArea3 = new CommentArea($("#prof3"),[comment3]);
 

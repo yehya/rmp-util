@@ -261,7 +261,9 @@ window.Rmptip = function(professorElement, prfData) {
     tip.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
   };
 
+  ////////////
   /// MAIN ///
+  ////////////
 
   main();
 

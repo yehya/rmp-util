@@ -13,7 +13,7 @@ window.Rmptip = function (professorElement, prfData) {
   /// DEFINITIONS ///
   ///////////////////
 
-  var hotnessElement, tipTitle, hotImg;
+  var hotnessElement, tipTitle, chiliImgHTML;
   var IMAGE_SRC, HOTNESS_IMAGES, HOTNESS, BAR_COLOR;
 
   /**
@@ -64,44 +64,19 @@ window.Rmptip = function (professorElement, prfData) {
     '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + '<div class="col-md-9 col-sm-9 col-xs-9"><p>' +
     prfData.name + '</p></div></div>';
 
-  /*
-   * Creates a new instance of open tip which contains the pop up
-   */
-  var professorTipPopUp = new Opentip(professorElement,{
-    /*
-     * Html for the title and content is not escaped for styling
-     */
-    title: tipTitle,
-    escapeTitle: false,
-    escapeContent: false,
-    hideDelay: 0.1,
-    fixed: true,
-    hideEffect: 'fade',
-    borderRadius: 12,
-    borderWidth: 3,
-    borderColor: '#000',
-    shadow: true,
-    shadowBlur: 10,
-    shadowOffset: [3, 3],
-    background: '#00adee',
-    removeElementsOnHide: true,
-    cache: 'yes'
-  });
-
-
   /**
    * This function takes in a rating value for a bar that is out of 5
    * and then uses that value to generate a customized bar.
    *
    * @param {number} trait
    * @param {string} rating of the trait
-   * @returns {string}
+   * @returns {string} containing the css for the color
    */
   var getBarHTML = function (rating, trait) {
     var widthPX = (rating / 5) * 200;
     var width = widthPX + 'px';
     var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
-    var color = 'linear-gradient(to right, #b51b58 0%, #ef2e72 100%)';
+    var color = null;
 
     /**
      * Determines what color each progress bar is
@@ -116,6 +91,8 @@ window.Rmptip = function (professorElement, prfData) {
       case (rating > 3 && rating <= 5):
         color = BAR_COLOR_STYLES[2];
         break;
+      default:
+        color = BAR_COLOR_STYLES[0];
     }
 
     /**
@@ -225,60 +202,76 @@ window.Rmptip = function (professorElement, prfData) {
   /**
    * Chooses the color depending  on the rating
    */
-  var colorChooser = function(rating){
+  var getColor = function(rating){
+    // Holds all of the colors we use
     var BAR_COLOR_STYLES = ['linear-gradient(to right, #b51b58 0%, #ef2e72 100%)', 'linear-gradient(to right, #ff9c00 0%, #ffd42b 100%)', 'linear-gradient(to right, #849c1b 0%, #c8e744 100%)'];
-    var color = 'linear-gradient(to right, #b51b58 0%, #ef2e72 100%)';
-
-    /**
-     * Determines the color of the progress bar for the passed in rating
-     */
+    
+    // If the rating is a number,
     if (typeof rating === "number") {
       switch (true) {
         case (rating > 3 && rating <= 5):
-          color = BAR_COLOR_STYLES[BAR_COLOR.GOOD];
-          break;
+          return BAR_COLOR_STYLES[BAR_COLOR.GOOD];
         case (rating > 1 && rating <= 3):
-          color = BAR_COLOR_STYLES[BAR_COLOR.AVERAGE];
-          break;
+          return BAR_COLOR_STYLES[BAR_COLOR.AVERAGE];
         default:
-          color = BAR_COLOR_STYLES[BAR_COLOR.BAD];
+          return BAR_COLOR_STYLES[BAR_COLOR.BAD];
       }
     } else {
       switch (rating) {
         case ("A"):
         case ("A-"):
         case ("B+"):
-          color = BAR_COLOR_STYLES[BAR_COLOR.GOOD];
-          break;
+          return BAR_COLOR_STYLES[BAR_COLOR.GOOD];
         case ("B-"):
         case ("B"):
         case ("C+"):
         case ("C"):
-          color = BAR_COLOR_STYLES[BAR_COLOR.AVERAGE];
-          break;
+          return BAR_COLOR_STYLES[BAR_COLOR.AVERAGE];
         default:
-          color = BAR_COLOR_STYLES[BAR_COLOR.BAD];
+          return BAR_COLOR_STYLES[BAR_COLOR.BAD];
       }
     }
-    return color;
   };
 
   var main = function () {
+    /*
+     * Creates a new instance of open tip which contains the pop up
+     */
+    var tip = new Opentip(professorElement,{
+      /*
+       * Html for the title and content is not escaped for styling
+       */
+      title: tipTitle,
+      escapeTitle: false,
+      escapeContent: false,
+      hideDelay: 0.1,
+      fixed: true,
+      hideEffect: 'fade',
+      borderRadius: 12,
+      borderWidth: 3,
+      borderColor: '#000',
+      shadow: true,
+      shadowBlur: 10,
+      shadowOffset: [3, 3],
+      background: '#00adee',
+      removeElementsOnHide: true,
+      cache: 'yes'
+    });
 
-    // Set the hotImg
+    // Set the chiliImgHTML
     if (typeof prfData.chili === "number") {
-      hotImg = HOTNESS_IMAGES[prfData.chili];
+      chiliImgHTML = HOTNESS_IMAGES[prfData.chili];
     } else {
-      hotImg = HOTNESS_IMAGES[HOTNESS.COLD];
+      chiliImgHTML = HOTNESS_IMAGES[HOTNESS.COLD];
     }
 
     /**
      * Displays the three columns for Quality, Grade, and Hotness
      */
     var profInfo = threecolLayout("<p class='heading-text'>Quality", "<p class='heading-text'>Grade</p>", "<p class='heading-text'>Hotness</p>")  +
-      threecolLayout("<p class='heading-text-ratings' style='background:"+ colorChooser(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+colorChooser(prfData.avg)+";'>"+prfData.avg+"</p>", hotImg);
+      threecolLayout("<p class='heading-text-ratings' style='background:"+ getColor(prfData.quality)+";'>" + prfData.quality + "</p>", "<p class='heading-text-ratings' style='background:"+getColor(prfData.avg)+";'>"+prfData.avg+"</p>", chiliImgHTML);
 
-    professorTipPopUp.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
+    tip.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
   };
 
   /// MAIN ///

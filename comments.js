@@ -1,4 +1,10 @@
 /**
+ * Contains all comment Areas created
+ * @type {Array}
+ */
+var allCommentAreas = [];
+
+/**
  * Comment Area for a professor
  *
  * @param jqelem
@@ -13,21 +19,23 @@ var CommentArea = function(jqelem, comments) {
   this.numOfComments = 0;
   this.jqelem = $(jqelem);
   var _this = this;
-  
+
   /**
-   * Adds the slideEffect 
+   * Adds the slideEffect
    */
-  function slideEffect(){
-     $('[id^=entire-block]').animate({right: '-445px'});
-     _this.slideLeft($(_this.entireBlock));
+  var  slideEffect = function(){
+    $('[id^=entire-block]').animate({right: '-445px'});
+    _this.slideLeft($(_this.entireBlock));
   };
-  
+
   // For all comments in the array add it
   for (var i = 0; i < comments.length; i += 1) {
     var comment = comments[i];
     this.newComment(comment);
   }
   this.jqelem.bind('mouseover', slideEffect);
+
+  allCommentAreas.push(this);
 };
 
 /**

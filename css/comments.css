@@ -27,7 +27,6 @@
     word-wrap: break-word;
     overflow: auto;
     max-height: 90%;
-    height:90%;
 }
 
 /* x icon */
@@ -140,6 +139,6 @@
 }
 
 
-[id^=prof]{
-    width:450px;
-}
+/*[id^=prof]{*/
+    /*width:450px;*/
+/*}*/

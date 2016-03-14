@@ -44,6 +44,7 @@ var CommentArea = function(nameEleme, comments) {
   }
   this.$nameElem.bind('mouseover', slideEffect);
 
+  // Add the commentArea to an array
   allCommentAreas.push(this);
 };
 
@@ -189,9 +190,6 @@ CommentArea.prototype.show = function() {
   this.visible = true;
   //elm.slideDown();
   this.$entireBlock.animate({right: '-1px'});
-  if (this.$entireBlock.height() > 0.85 * $(document).height()) {
-    this.$entireBlock.height(0.85 * $(document).height());
-  }
 };
 
 /**

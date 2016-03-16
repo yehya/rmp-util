@@ -1,6 +1,5 @@
 Rmp-Utility Framework
 =======
-[![Build Status](https://travis-ci.org/jsdoc3/jsdoc.svg?branch=master)](http://travis-ci.org/jsdoc3/jsdoc) 
 
 A framework that presents rate my professor data in two beautiful pop-ups. Checkout the live Demo
 

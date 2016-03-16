@@ -51,27 +51,26 @@ The format of the professor data object should be as following.
     help: 4.3,
     clarity: 4.2,
     easiness: 2.3
-};
+  };
 ```
 
 The format of the comment data object should be as following.
 
 ```javascript
-    var commentData = {
-        image: "GOOD",
-        rating: "AVERAGE",
-        text: "As a second language learner, he made me believe in my writing ability... Even though there is a lot of works in his class; however, as long as you finish it you definitely has a high grade no matter how bad your writing is =))... I'm saying that because my writing is really bad. Take him, you will have less stress while taking other hard classes.",
-        footer: "Find out what students are saying.",
-        tag: "TESTS? NOT MANY (10)"
-};
-
+  var commentData = {
+    image: "GOOD",
+    rating: "AVERAGE",
+    text: "As a second language learner, he made me believe in my writing ability... Even though there is a lot of works in his class; however, as long as you finish it you definitely has a high grade no matter how bad your writing is =))... I'm saying that because my writing is really bad. Take him, you will have less stress while taking other hard classes.",
+    footer: "Find out what students are saying.",
+    tag: "TESTS? NOT MANY (10)"
+  };
 ```
 
 For More Information
 --------------------
 
 + Documentation is available at [Use Rmp-Utility](http://usejsdoc.org).
-+ Contribute to the docs at [Rmp-Utility](https://github.com/jsdoc3/jsdoc3.github.com).
++ Contribute to the docs at [Rmp-Utility](https://github.com/awadYehya/rmp-tip).
 
 License
 -------

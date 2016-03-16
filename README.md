@@ -15,7 +15,7 @@ To install the latest version available on Bower:
 
 To install the latest development version:
 
-    bower install git+https://github.com/awadYehya/rmp-tip
+    bower install git+https://github.com/abdallahozaifa/rmp-tip
 
 Usage 
 -----

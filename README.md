@@ -60,9 +60,8 @@ The format of the comment data object should be as following.
   var commentData = {
     image: "GOOD",
     rating: "AVERAGE",
-    text: "As a second language learner, he made me believe in my writing ability... Even though there is a lot of works in his class; however, as long as you finish it you definitely has a high grade no matter how bad your writing is =))... I'm saying that because my writing is really bad. Take him, you will have less stress while taking other hard classes.",
-    footer: "Find out what students are saying.",
-    tag: "TESTS? NOT MANY (10)"
+    text: "He was the best professor ever. He was so engaging during lectures and really made you think. Yeah there was a lot of work but it wasn't so bad considering you learned a lot from it.",
+    tag: "Amazing Lectures"
   };
 ```
 

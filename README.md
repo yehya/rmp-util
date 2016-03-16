@@ -43,7 +43,7 @@ In order to create the Rmp-comments you must invoke the comment method with a co
 The format of the professor data object should be as following.
 
 ```javascript
-  var professorDataObject = {
+  var professorData = {
     name: 'Hozaifa Abdalla',
     quality: 4.3,
     avg: 'A',
@@ -57,7 +57,7 @@ The format of the professor data object should be as following.
 The format of the comment data object should be as following.
 
 ```javascript
-    var comment2 = {
+    var commentData = {
         image: "GOOD",
         rating: "AVERAGE",
         text: "As a second language learner, he made me believe in my writing ability... Even though there is a lot of works in his class; however, as long as you finish it you definitely has a high grade no matter how bad your writing is =))... I'm saying that because my writing is really bad. Take him, you will have less stress while taking other hard classes.",

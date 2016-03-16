@@ -22,7 +22,6 @@
     background-size: auto auto;
     -moz-background-size: auto auto;
     -webkit-background-size: auto auto;
-    /*font: normal normal normal 16px/16px;*/
     padding: 1%;
     word-wrap: break-word;
     overflow: auto;
@@ -48,7 +47,6 @@
 /* the section that contains all of the content */
 #entire-content-section {
     width: 100%;
-    /*font: normal normal normal 16px/16px;*/
     height: auto;
     font-family: Gothee,cursive,"Source Sans Pro Black", serif;
 }
@@ -59,7 +57,6 @@
     float: left;
     height: auto;
     width: 40px;
-    /*font: normal normal normal 16px/16px;*/
     border: 1px solid #000;
     border-radius:7px;
     margin: 0px 10px 0px 0px;
@@ -70,17 +67,13 @@
 #top-content-section {
     height: auto;
     width: 100%;
-    /*font: normal normal normal 16px/16px;*/
-    /*font-family: Gothee;*/
     font-size: 130%;
-    /*border:2px solid red;*/
 }
 
 /* the top part tha contains the image rating and x icon*/
 #content-header {
     height: 56px;
     width: 350px;
-    /*font: normal normal normal 28px/28px league_gothicregular;*/
     margin: 0 auto;
     padding-top: 1%;
     font-size: 30px;
@@ -89,13 +82,9 @@
 
 /* the middle content that contains the comment */
 #middle-content {
-    /*font-family: Gothee;*/
     font: normal normal normal 16px/16px;
     line-height: 25px;
     word-wrap: break-word;
-    /*border:2px solid red;*/
-    /*background:#FFF;*/
-    /*font-family: :arial;*/
 }
 
 /* the bottom content that contains the link */
@@ -109,7 +98,6 @@
     text-transform: uppercase;
     width: 350px;
     border: 0px none rgb(0, 173, 237);
-    /*font: normal normal normal 12px/12px 'Source Sans Pro Black';*/
     margin: 11px 0px 0px;
     outline: rgb(0, 173, 237) none 0px;
 }
@@ -139,8 +127,3 @@
     font-family: Gothee,cursive,"Source Sans Pro Black", serif;
     font-size: 18px;
 }
-
-
-/*[id^=prof]{*/
-    /*width:450px;*/
-/*}*/

@@ -36,7 +36,8 @@ var comment1 = {
     rating: "POOR",
     text: "Attending class is not necessary, but reading the textbook is a must. I attended all of his classes for ECON1000 but didn't find it helpful, so I never went to class for ECON1010. Do your readings and study from the test banks. With some effort, you're guaranteed to get an A. Would take his class again.",
     footer: "Find out what students are saying.",
-    tag: "GET READY TO READ"
+    tag: "GET READY TO READ",
+    course: "FLAN200"
 };
 
 var comment2 = {
@@ -44,7 +45,8 @@ var comment2 = {
     rating: "AVERAGE",
     text: "As a second language learner, he made me believe in my writing ability... Even though there is a lot of works in his class; however, as long as you finish it you definitely has a high grade no matter how bad your writing is =))... I'm saying that because my writing is really bad. Take him, you will have less stress while taking other hard classes.",
     footer: "Find out what students are saying.",
-    tag: "TESTS? NOT MANY (10)"
+    tag: "TESTS? NOT MANY (10)",
+    course: "FLAN200"
 };
 
 var comment3 = {
@@ -52,7 +54,8 @@ var comment3 = {
     rating: "GOOD",
     text: "Attending class is not necessary, but reading the textbook is a must. I attended all of his classes for ECON1000 but didn't find it helpful, so I never went to class for ECON1010. Do your readings and study from the test banks. With some effort, you're guaranteed to get an A. Would take his class again.",
     footer: "Find out what students are saying.",
-    tag: "TOUGH GRADER (10)"
+    tag: "TOUGH GRADER (10)",
+    course: "FLAN200"
 };
 
 var professorElement = $('[id^=prof]'); // professor test element

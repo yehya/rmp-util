@@ -137,7 +137,7 @@ CommentArea.prototype.buildCommentArea = function() {
  */
 CommentArea.prototype.injectContent = function(comment) {
   $(this.singleComment.commentsImage).attr('src', this.getImage(comment.rating));
-  $(this.singleComment.contentHeader).text(comment.rating);
+  $(this.singleComment.contentHeader).text(comment.rating+" - "+comment.course);
   $(this.singleComment.middleContent).text(comment.text);
   $(this.singleComment.contentBottom).text(comment.footer);
   $(this.singleComment.tag).text(comment.tag);
@@ -182,7 +182,7 @@ CommentArea.prototype.getImage = function(rating) {
 };
 
 /**
- * Shows the comment area 
+ * Shows the comment area
  */
 CommentArea.prototype.show = function() {
   this.visible = true;

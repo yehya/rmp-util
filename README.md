@@ -34,10 +34,10 @@ In order to create the Rmp-tip you must invoke the tip method with a target elem
   RmpUtility.tip(targetElement, prfData);
 ```
 
-In order to create the Rmp-comments you must invoke the comment method with a commentData object.
+In order to create the Rmp-comments you must invoke the comment method with a target element and commentData object.
 
 ```javascript
-  RmpUtility.comment(commentData);
+  RmpUtility.comment(targetElement, commentData);
 ```
 
 The format of the professor data object should be as following.

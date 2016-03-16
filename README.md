@@ -59,7 +59,7 @@ The format of the comment data object should be as following.
 ```javascript
   var commentData = {
     image: "GOOD",
-    rating: "AVERAGE",
+    rating: "GOOD",
     text: "He was the best professor ever. He was so engaging during lectures and really made you think. Yeah there was a lot of work but it wasn't so bad considering you learned a lot from it.",
     tag: "Amazing Lectures"
   };
@@ -84,7 +84,7 @@ License
 
 Rmp-Utility is copyright (c) 2016 Hozaifa Abdalla, Yehya Awad
 
-Rmp-Utility is free software, licensed under the MIT License, Version 2.0. See
+Rmp-Utility is free software, licensed under the MIT License, See
 the file `LICENSE.md` in this distribution for more details.
 
 

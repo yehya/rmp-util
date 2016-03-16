@@ -66,7 +66,8 @@ The format of the comment data object should be as following.
   };
 ```
 
-#Authors
+Authors
+-------
 Rmp-Utility was created by Hozaifa Abdalla and Yehya Awad
 
 For More Information

@@ -1,0 +1,28 @@
+{
+  "name": "rmp-tip",
+  "version": "0.0.1",
+  "description": "Rmp-Utility Framework =======",
+  "main": "rmp-tip.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "uglify-js": "2.6.2"
+  },
+  "devDependencies": {
+    "uglify-js": "2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awadYehya/rmp-tip.git"
+  },
+  "author": "Yehya <yehyaawad.kip@gmail.com> (http://yehyaawad.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awadYehya/rmp-tip/issues"
+  },
+  "homepage": "https://github.com/awadYehya/rmp-tip#readme"
+}

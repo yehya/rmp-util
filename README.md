@@ -15,7 +15,7 @@ To install the latest version available on Bower:
 
 To install the latest development version:
 
-    bower install git+https://github.com/awadYehya/rmp-tip
+    bower install git+https://github.com/abdallahozaifa/rmp-tip
 
 Usage 
 -----
@@ -68,6 +68,10 @@ The format of the comment data object should be as following.
 Authors
 -------
 Rmp-Utility was created by Hozaifa Abdalla and Yehya Awad
+
+Related Projects
+----------------
+You might also be interested in our [PSU Rate My Professor Plugin](https://chrome.google.com/webstore/detail/psu-rate-my-professor-plu/mgcgmhhcjfknhchpfnkfhkoemaglookl?hl=en)
 
 For More Information
 --------------------

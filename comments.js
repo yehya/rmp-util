@@ -7,11 +7,11 @@ var allCommentAreas = [];
 /**
  * Comment Area for a professor
  *
- * @param nameEleme
+ * @param nameElement
  * @param comments
  * @constructor
  */
-var CommentArea = function(nameEleme, comments) {
+var CommentArea = function(nameElement, comments) {
   this.entireBlock = document.createElement('div');
   this.$entireBlock = $(this.entireBlock);
   this.body = document.getElementsByTagName('body')[0];

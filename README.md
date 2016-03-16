@@ -69,6 +69,10 @@ Authors
 -------
 Rmp-Utility was created by Hozaifa Abdalla and Yehya Awad
 
+Related Projects
+----------------
+You might also be interested in our [PSU Rate My Professor Plugin](https://chrome.google.com/webstore/detail/psu-rate-my-professor-plu/mgcgmhhcjfknhchpfnkfhkoemaglookl?hl=en)
+
 For More Information
 --------------------
 

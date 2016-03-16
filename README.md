@@ -81,8 +81,7 @@ For More Information
 License
 -------
 
-Rmp-Utility is copyright (c) 2016 Hozaifa Abdalla, Yehya Awad
-Rmp-Utility is free software, licensed under the MIT License, See
+Rmp-Utility is copyright (c) 2016 Hozaifa Abdalla, Yehya Awad. <br>Rmp-Utility is free software, licensed under the MIT License, See
 the file `LICENSE.md` in this distribution for more details.
 
 

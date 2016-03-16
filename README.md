@@ -33,11 +33,13 @@ In order to create the Rmp-tip you must invoke the tip method with a target elem
 ```javascript
   RmpUtility.tip(targetElement, prfData);
 ```
+
 In order to create the Rmp-comments you must invoke the comment method with a commentData object.
 
 ```javascript
   RmpUtility.comment(commentData);
 ```
+
 The format of the professor data object should be as following.
 
 ```javascript
@@ -52,36 +54,24 @@ The format of the professor data object should be as following.
 };
 ```
 
+The format of the comment data object should be as following.
 
-Templates and Build Tools
--------------------------
+```javascript
+    var comment2 = {
+        image: "GOOD",
+        rating: "AVERAGE",
+        text: "As a second language learner, he made me believe in my writing ability... Even though there is a lot of works in his class; however, as long as you finish it you definitely has a high grade no matter how bad your writing is =))... I'm saying that because my writing is really bad. Take him, you will have less stress while taking other hard classes.",
+        footer: "Find out what students are saying.",
+        tag: "TESTS? NOT MANY (10)"
+};
 
-The JSDoc community has created numerous templates and other tools to help you
-generate and customize your documentation. Here are just a few:
-
-### Templates
-
-+ [jaguarjs-jsdoc](https://github.com/davidshimjs/jaguarjs-jsdoc)
-  ([example](http://davidshimjs.github.io/jaguarjs/doc))
-+ [DocStrap](https://github.com/docstrap/docstrap) ([example](https://docstrap.github.io/docstrap))
-+ [jsdoc3Template](https://github.com/DBCDK/jsdoc3Template)
-  ([example](https://github.com/danyg/jsdoc3Template/wiki#wiki-screenshots))
-+ [minami](https://github.com/Nijikokun/minami)
-
-### Build Tools
-
-+ [JSDoc Grunt plugin](https://github.com/krampstudio/grunt-jsdoc)
-+ [JSDoc ant task](https://github.com/jannon/jsdoc3-ant-task)
-
+```
 
 For More Information
 --------------------
 
-+ Documentation is available at [Use JSDoc](http://usejsdoc.org).
-+ Contribute to the docs at [jsdoc3/jsdoc3.github.com](https://github.com/jsdoc3/jsdoc3.github.com).
-+ Ask for help on the [JSDoc Users mailing list](http://groups.google.com/group/jsdoc-users).
-+ Post questions tagged `jsdoc` to [Stack
-Overflow](http://stackoverflow.com/questions/tagged/jsdoc).
++ Documentation is available at [Use Rmp-Utility](http://usejsdoc.org).
++ Contribute to the docs at [Rmp-Utility](https://github.com/jsdoc3/jsdoc3.github.com).
 
 License
 -------

@@ -18,7 +18,7 @@ To install the latest development version:
 
 Usage 
 -----
-In order to use the Rmp-Utility, you first have to create an instance of the utlity
+In order to use the Rmp-Utility, you first have to create an instance of the utility
 
 ```javascript
   var RmpUtility = new rmpUtility();

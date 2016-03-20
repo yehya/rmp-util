@@ -16,6 +16,21 @@ To install the latest development version:
 
     bower install git+https://github.com/abdallahozaifa/rmp-tip
 
+To install the dependencies:
+
+    bower install
+
+Soon after it will ask you for a suitable version for jquery. 
+
+    Unable to find a suitable version for jquery, please choose one:
+        1) jquery#~1.9.0 which resolved to 1.9.1 and is required by opentip#2.4.6
+        2) jquery#1.9.1 - 2 which resolved to 1.9.1 and is required by bootstrap#3.3.6
+        3) jquery#^2.2.1 which resolved to 2.2.2 and is required by rmp-tip
+ 
+ Please select the option that corresponds to jquery#^2.2.1:
+
+    bower install
+
 Usage 
 -----
 In order to use the Rmp-Utility, you first have to create an instance of the utility

@@ -14,22 +14,12 @@ var rmpUtility = function(){
     IMAGE_SRC.GOOD_SMILE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAlCAIAAAC/AjzkAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTVCMDMxNUQ5NjVBMTFFMzlENjRCMUI0NkZBQzU3NjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTVCMDMxNUU5NjVBMTFFMzlENjRCMUI0NkZBQzU3NjMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NjAxOTdDRTkzM0QxMUUzOUQ2NEIxQjQ2RkFDNTc2MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NUIwMzE1Qzk2NUExMUUzOUQ2NEIxQjQ2RkFDNTc2MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhkA5ckAAAIDSURBVHja7JbLSgJhFMd1bl7GLEe70ZjhJghxUXTZtY1aRLueozbRC1SbeoZeICKIoHqAiMiQIoISQi20dJocHZsZp05GFxS/uRi5aD5mMR7+//PzO3PmO2PfiY3ZWrEwW4uWBbbAFvjvwHaPc4DEvfozghgsYETLCGSKtrHwOkNHVVWKp1aT+V1NapCZibJLGEbli/HjxIJcKZjZcYRdBOq7CKOiweXqPlALBCADMdyDEexmSu0kA6xv6ltnJ8Kd82gwCED29RPskMQw2O8ZrnlOAc8IGlwnsFeTGAS7qd6aiKsuoilwN7YgnjFe2991ER0C3DC4LGc1I81YGoJzQkwz0oylIbgkpR+Fk5+R29w2GlwjADskMfMex5MrZfnh4/46s5kvnqHBIADZZ5EfwI5qCPQ3FxxeXd6JknTPFc91Hpk+OgLNnH0+Qhxb2uB/ORahdBThM5QUDiwCp81PJ1gOghkPb+CY8447THF7OeFUfVUQ4p72yVBgrt01ePu4FU+tmQeThJcvXQXaRllmGq6KKnKli4J4I8oZSeGrw4N0kAxNsR3uoa/xJVcECdlZepsLMob8s7AbN9WHkEEx8kIs/XSQ5vbhL/4C+HsMkN2wM9rZ7yK7cMyFY5SilmWFL0rpgpjgxcuK+qIzFWGoa6DCIp+x8dZXpgW2wBYY1psAAwCqJL2e6JDgwgAAAABJRU5ErkJggg==';
     IMAGE_SRC.POOR_SMILE = 'data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMsaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjUtYzAyMSA3OS4xNTQ5MTEsIDIwMTMvMTAvMjktMTE6NDc6MTYgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQTcwMzMwMEI4RjcxMUUzOTZDNkY5NjRBQjgxQjMxNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQTcwMzMwMUI4RjcxMUUzOTZDNkY5NjRBQjgxQjMxNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkFGNjAzRTc1QjhGNzExRTM5NkM2Rjk2NEFCODFCMzE1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFGNjAzRTc2QjhGNzExRTM5NkM2Rjk2NEFCODFCMzE1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgAJQAoAwERAAIRAQMRAf/EAH0AAQADAQAAAAAAAAAAAAAAAAABBgcDAQEAAgMBAQAAAAAAAAAAAAAAAQMCBQYEBxAAAAQFAwMFAQEAAAAAAAAAAAECBREDEwQGMRIUIVEVQWEyFgciFxEAAQMCBAUFAAAAAAAAAAAAAAECAxEEIVESE0FxkSIFMeEUFQb/2gAMAwEAAhEDEQA/AKUPCfbwAAAAAAB6ASbbhP4Vjbq12rtdu0y+t7hJLpW5Uke5b/n00F7YkXE4jyX6eeKR0bWI1Uzx9jP/AK+2/wCoeB4x+O5/G41X+qe3Sr39YiundQ6D5b/g71e/RWtOPI0DNvwrG2psuna0dpljb26TXSuCqo9i3/ProLHRImJz/jf088r0jcxHKuWHsYkWnYUHbgCCw45lubN8hTWwXt0mXMM1Fa25HMMjVqpCSIzIzGTXLwNfeWFrIu5M1vNcCfpefb+d4dwrbqtajNqb4x3aboxDSpH2VpTRrZT0pVKEZHlubOEhLW/3t0qXLMlHa3BHLMzTopaTIjMyBzl4k2dhaxruQtbzTErwxNgABYmfPsmZWc2tpnos5SlqmKuZctPIM1elU49C7DJHqiYGuuPFQTSbkialyr29Dh94zOtW83eVYx31TjERqXMs+stqU2205Hd5z/JnpnJrdp6LyUlaZibmZLTyCNPpVKHQ+wlXqqUUrt/FQQybkaaVyr29CujE2IAAAAAAAAf/2Q==';
     
-   /**
-    * rmpTip
-    * This function is passed an 2 arguments, an element,
-    * and RateMyProfessor data, which will then be displayed
-    * as a tip.
-    *
-    * @param {element} professorElement
-    * @param {object} prfData
-    */
-    var rmpTip = function(professorElement, prfData) {
-
+  
     ///////////////////
     /// DEFINITIONS ///
     ///////////////////
 
-    var hotnessElement, tipTitle, chiliImgHTML;
+    var hotnessElement, chiliImgHTML;
     var HOTNESS_IMAGES, HOTNESS, BAR_COLOR;
 
     /**
@@ -63,11 +53,13 @@ var rmpUtility = function(){
         AVERAGE: 1,
         BAD: 0
     };
-
-    tipTitle = '<div class="container-fluid"><div class="row">' + '<div class="col-md-3 col-sm-3 col-xs-3">' +
+    
+    var createTipTitle = function(prfData){
+        return '<div class="container-fluid"><div class="row">' + '<div class="col-md-3 col-sm-3 col-xs-3">' +
         '<img src="' + IMAGE_SRC.SMILEBOX + '"/></div>' + '<div class="col-md-9 col-sm-9 col-xs-9"><p>' +
         prfData.name + '</p></div></div>';
-
+    }
+ 
     /**
      * Formats the professor attribute to a decimal place
      * Ex: 4 would turn into 4.0
@@ -81,7 +73,7 @@ var rmpUtility = function(){
     /**
      * Validates that the professors data that is passed in and returns a professorDataError message
      */
-    var validateProfessorData = function() {
+    var validateProfessorData = function(prfData) {
         try {
         if (prfData.quality <= 0 || prfData.quality > 5) {
             throw {
@@ -136,7 +128,7 @@ var rmpUtility = function(){
                 break;
             }
         }
-    }();
+    };
 
     /**
      * Creates the three column layout
@@ -214,65 +206,7 @@ var rmpUtility = function(){
         '</div>' +
         '</div>';
     };
-
-    var main = function() {
-        /*
-        * Creates a new instance of open tip which contains the pop up
-        */
-        var tip = new Opentip(professorElement,{
-        /*
-        * Html for the title and content is not escaped for styling
-        */
-        title: tipTitle,
-        escapeTitle: false,
-        escapeContent: false,
-        hideDelay: 0.1,
-        fixed: true,
-        hideEffect: 'fade',
-        borderRadius: 12,
-        borderWidth: 3,
-        borderColor: '#000',
-        shadow: true,
-        shadowBlur: 10,
-        shadowOffset: [3, 3],
-        background: '#00adee',
-        removeElementsOnHide: true,
-        cache: 'yes',
-        autoOffset: true,
-        });
-
-       /**
-        * The Progress Bars for Helpfulness, Clarity, and Easiness
-        */
-        var bars = {};
-        bars.helpfulness = getBarHTML(prfData.help,'Helpfulness');
-        bars.clarity = getBarHTML(prfData.clarity,'Clarity');
-        bars.easiness = getBarHTML(prfData.easiness, 'Easiness');
-
-        // Sets the appropriate img src for the correct chili 
-        if (typeof prfData.chili === 'number') {
-            chiliImgHTML = HOTNESS_IMAGES[prfData.chili];
-        } else {
-            chiliImgHTML = HOTNESS_IMAGES[HOTNESS.COLD];
-        }
-
-       /**
-        * Displays the three columns for Quality, Grade, and Hotness
-        */
-        var profInfo = threecolLayout('<p class=\'heading-text\'>Quality', '<p class=\'heading-text\'>Grade</p>', '<p class=\'heading-text\'>Hotness</p>')  +
-        threecolLayout('<p class=\'heading-text-ratings\' style=\'background:' + getColor(prfData.quality) + ';\'>' + prfData.quality + '</p>', '<p class=\'heading-text-ratings\' style=\'background:' + getColor(prfData.avg) + ';\'>' + prfData.avg + '</p>', chiliImgHTML);
-
-        tip.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
-    };
-
-    ////////////
-    /// MAIN ///
-    ////////////
-
-    main();
-
-    };
-
+    
     /**
      * Contains all comment Areas created
      * @type {Array}
@@ -448,9 +382,9 @@ var rmpUtility = function(){
      */
     CommentArea.prototype.getImage = function(rating) {
         this.selectImage = {
-            'AVERAGE': this.commentImages[0],
-            'GOOD': this.commentImages[1],
-            'POOR': this.commentImages[2]
+            'AVERAGE': IMAGE_SRC.AVERAGE_SMILE,
+            'GOOD': IMAGE_SRC.GOOD_SMILE,
+            'POOR': IMAGE_SRC.POOR_SMILE
         };
         return this.selectImage[rating];
     };
@@ -463,14 +397,81 @@ var rmpUtility = function(){
         this.$entireBlock.animate({right: '-1px'});
     };
 
-    /**
-     * Closes the comment area
-     */
+   /**
+    * Closes the comment area
+    */
     CommentArea.prototype.close = function() {
         this.visible = false;
         this.$entireBlock.animate({right: '-445px'});
     };
+    
+    
+    /**
+    * rmpTip
+    * This function is passed an 2 arguments, an element,
+    * and RateMyProfessor data, which will then be displayed
+    * as a tip.
+    *
+    * @param {element} targetElement
+    * @param {object} prfData
+    */
+    var rmpTip = function(targetElement, prfData) {
+        validateProfessorData(prfData);
+        var tipTitle = createTipTitle(prfData);
+        /*
+        * Creates a new instance of open tip which contains the pop up
+        */
+        var tip = new Opentip(targetElement,{
+            /*
+            * Html for the title and content is not escaped for styling
+            */
+            title: tipTitle,
+            escapeTitle: false,
+            escapeContent: false,
+            hideDelay: 0.1,
+            fixed: true,
+            hideEffect: 'fade',
+            borderRadius: 12,
+            borderWidth: 3,
+            borderColor: '#000',
+            shadow: true,
+            shadowBlur: 10,
+            shadowOffset: [3, 3],
+            background: '#00adee',
+            removeElementsOnHide: true,
+            cache: 'yes',
+            autoOffset: true,
+            });
 
+    /**
+        * The Progress Bars for Helpfulness, Clarity, and Easiness
+        */
+        var bars = {};
+        bars.helpfulness = getBarHTML(prfData.help,'Helpfulness');
+        bars.clarity = getBarHTML(prfData.clarity,'Clarity');
+        bars.easiness = getBarHTML(prfData.easiness, 'Easiness');
+
+        // Sets the appropriate img src for the correct chili 
+        if (typeof prfData.chili === 'number') {
+            chiliImgHTML = HOTNESS_IMAGES[prfData.chili];
+        } else {
+            chiliImgHTML = HOTNESS_IMAGES[HOTNESS.COLD];
+        }
+
+    /**
+        * Displays the three columns for Quality, Grade, and Hotness
+        */
+        var profInfo = threecolLayout('<p class=\'heading-text\'>Quality', '<p class=\'heading-text\'>Grade</p>', '<p class=\'heading-text\'>Hotness</p>')  +
+        threecolLayout('<p class=\'heading-text-ratings\' style=\'background:' + getColor(prfData.quality) + ';\'>' + prfData.quality + '</p>', '<p class=\'heading-text-ratings\' style=\'background:' + getColor(prfData.avg) + ';\'>' + prfData.avg + '</p>', chiliImgHTML);
+
+        tip.setContent(profInfo + bars.helpfulness + bars.clarity + bars.easiness);
+    };
+
+    return {
+        tip : function(targetElement, prfData){
+            rmpTip(targetElement, prfData);
+        }
+    }
 }
 
 

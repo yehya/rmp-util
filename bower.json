@@ -1,12 +1,12 @@
 {
-  "name": "rmp-tip",
-  "main": "rmp-tip.js",
+  "name": "rmpUtility",
+  "main": "rmpUtility.js",
   "homepage": "https://github.com/awadYehya/rmp-tip",
   "authors": [
     "Hozaifa Abdalla <abdallahozaifa19527@gmail.com>",
     "Yehya Awad <yehyaawad.kip@gmail.com>"
   ],
-  "description": "Tool tip that displays professors RMP details",
+  "description": "Tool tip and comment section that displays professors RMP details",
   "moduleType": [],
   "keywords": [
     "ratemyprofessor",
@@ -15,7 +15,7 @@
     "tip"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -27,6 +27,9 @@
     "opentip": "^2.4.6",
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.1"
+  },
+  "resolutions": {
+      "jquery": "~2.2.1"
   },
   "devDependencies": {
     "jscs": "^2.7.0"

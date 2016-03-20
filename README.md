@@ -66,7 +66,7 @@ The format of the comment data object should be as following.
   var commentDataArray = [commentData,commentData,commentData,......];
 ```
 
-Include all the proper css links as follows:
+Include all the proper css and javascript links as follows:
 
 ```html
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>

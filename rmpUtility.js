@@ -75,36 +75,36 @@ var rmpUtility = function(){
      */
     var validateProfessorData = function(prfData) {
         try {
-        if (prfData.quality <= 0 || prfData.quality > 5) {
-            throw {
-            name: 'ProfessorQualityOutOfRange',
-            message: 'Professor Quality Range must be between 1 and 5'
-            };
-        }
-        if (prfData.avg <= 0 || prfData.avg > 5) {
-            throw {
-            name: 'ProfessorAvgGradeOutOfRange',
-            message: 'Professor Average Grade Range must be between 1 and 5'
-            };
-        }
-        if (prfData.help <= 0 || prfData.help > 5) {
-            throw {
-            name: 'ProfessorHelpfulnessOutOfRange',
-            message: 'Professor Helpfulness Range must be between 1 and 5'
-            };
-        }
-        if (prfData.clarity <= 0 || prfData.clarity > 5) {
-            throw {
-            name: 'ProfessorClarityOutOfRange',
-            message: 'Professor Clarity Range must be between 1 and 5'
-            };
-        }
-        if (prfData.easiness <= 0 || prfData.easiness > 5) {
-            throw {
-            name: 'ProfessorEasinessOutOfRange',
-            message: 'Professor Easiness Range must be between 1 and 5'
-            };
-        }
+            if (prfData.quality <= 0 || prfData.quality > 5) {
+                throw {
+                name: 'ProfessorQualityOutOfRange',
+                message: 'Professor Quality Range must be between 1 and 5'
+                };
+            }
+            if (prfData.avg <= 0 || prfData.avg > 5) {
+                throw {
+                name: 'ProfessorAvgGradeOutOfRange',
+                message: 'Professor Average Grade Range must be between 1 and 5'
+                };
+            }
+            if (prfData.help <= 0 || prfData.help > 5) {
+                throw {
+                name: 'ProfessorHelpfulnessOutOfRange',
+                message: 'Professor Helpfulness Range must be between 1 and 5'
+                };
+            }
+            if (prfData.clarity <= 0 || prfData.clarity > 5) {
+                throw {
+                name: 'ProfessorClarityOutOfRange',
+                message: 'Professor Clarity Range must be between 1 and 5'
+                };
+            }
+            if (prfData.easiness <= 0 || prfData.easiness > 5) {
+                throw {
+                name: 'ProfessorEasinessOutOfRange',
+                message: 'Professor Easiness Range must be between 1 and 5'
+                };
+            }
         } catch (error) {
             console.error(error.name + ' ' + error.message);
             switch (error.name) {
@@ -207,52 +207,57 @@ var rmpUtility = function(){
         '</div>';
     };
     
+       
+    ///////////////////////
+    /// COMMENT SECTION ///
+    ///////////////////////
+    
     /**
      * Contains all comment Areas created
      * @type {Array}
      */
     var allCommentAreas = [];
 
-    /**
-     * Comment Area for a professor
-     *
-    * @param nameElement
+   /**
+    * Comment Area for a professor
+    *
+    * @param targetElement
     * @param comments
     * @constructor
     */
-    var CommentArea = function(nameElem, comments) {
-    this.entireBlock = document.createElement('div');
-    this.$entireBlock = $(this.entireBlock);
-    this.body = document.getElementsByTagName('body')[0];
-    this.numOfComments = 0;
-    this.$nameElem = $(nameElem);
-    this.visible = false;
-    var _this = this;
+    var CommentArea = function(targetElement, comments) {
+        this.entireBlock = document.createElement('div');
+        this.$entireBlock = $(this.entireBlock);
+        this.body = document.getElementsByTagName('body')[0];
+        this.numOfComments = 0;
+        this.$targetElement = $(targetElement);
+        this.visible = false;
+        var _this = this;
 
-    /**
-     * Adds the slideEffect
-     */
-    var slideEffect = function(){
-        if (_this.visible === false) {
-        // Close all others first
-        for (var i = 0; i < allCommentAreas.length; i += 1) {
-            allCommentAreas[i].$entireBlock.stop(true);
-            allCommentAreas[i].close();
+        /**
+         * Adds the slideEffect
+         */
+        var slideEffect = function(){
+            if (_this.visible === false) {
+            // Close all others first
+            for (var i = 0; i < allCommentAreas.length; i += 1) {
+                allCommentAreas[i].$entireBlock.stop(true);
+                allCommentAreas[i].close();
+            }
+            // Open this one
+            _this.show();
+            }
+        };
+
+        // For all comments in the array add it
+        for (var i = 0; i < comments.length; i += 1) {
+            var comment = comments[i];
+            this.newComment(comment);
         }
-        // Open this one
-        _this.show();
-        }
-    };
+        this.$targetElement.bind('mouseover', slideEffect);
 
-    // For all comments in the array add it
-    for (var i = 0; i < comments.length; i += 1) {
-        var comment = comments[i];
-        this.newComment(comment);
-    }
-    this.$nameElem.bind('mouseover', slideEffect);
-
-    // Add the commentArea to an array
-    allCommentAreas.push(this);
+        // Add the commentArea to an array
+        allCommentAreas.push(this);
     };
 
     /**
@@ -394,7 +399,7 @@ var rmpUtility = function(){
      */
     CommentArea.prototype.show = function() {
         this.visible = true;
-        this.$entireBlock.animate({right: '-1px'});
+        this.$entireBlock.animate({right: '-2px'});
     };
 
    /**
@@ -402,9 +407,9 @@ var rmpUtility = function(){
     */
     CommentArea.prototype.close = function() {
         this.visible = false;
-        this.$entireBlock.animate({right: '-445px'});
+        this.$entireBlock.animate({right: '-1000px'});
     };
-    
+
     
     /**
     * rmpTip
@@ -443,7 +448,7 @@ var rmpUtility = function(){
             autoOffset: true,
             });
 
-    /**
+       /**
         * The Progress Bars for Helpfulness, Clarity, and Easiness
         */
         var bars = {};
@@ -458,7 +463,7 @@ var rmpUtility = function(){
             chiliImgHTML = HOTNESS_IMAGES[HOTNESS.COLD];
         }
 
-    /**
+       /**
         * Displays the three columns for Quality, Grade, and Hotness
         */
         var profInfo = threecolLayout('<p class=\'heading-text\'>Quality', '<p class=\'heading-text\'>Grade</p>', '<p class=\'heading-text\'>Hotness</p>')  +
@@ -470,6 +475,9 @@ var rmpUtility = function(){
     return {
         tip : function(targetElement, prfData){
             rmpTip(targetElement, prfData);
+        },
+        comment : function(targetElement, comments){
+            new CommentArea(targetElement, comments);
         }
     }
 }

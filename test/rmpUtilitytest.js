@@ -1,4 +1,6 @@
-/* fake professor data for testing */
+/**
+ * fake professor data for testing
+ */
 var jordanJohnson = {
     name: 'Jordan Johnson',
     quality: 4.3,
@@ -9,7 +11,6 @@ var jordanJohnson = {
     easiness: 2.3
 };
 
-/* fake professor data for testing */
 var jacksonDaniels = {
     name: 'Jackson Daniels Morgan Arouga ',
     quality: 2,
@@ -20,7 +21,6 @@ var jacksonDaniels = {
     easiness: 4
 };
 
-/* fake professor data for testing */
 var bananaSu = {
     name: 'Banana Su',
     quality: 3,
@@ -58,16 +58,19 @@ var comment3 = {
     course: "FLAN200"
 };
 
-var professorElement = $('[id^=prof]'); // professor test element
-var RmpUtility = new rmpUtility();
-RmpUtility.tip(professorElement[0], jordanJohnson);
+var professorElements = $('[id^=prof]'); // professor test element
 
-// Rmptip(professorElement[0], jordanJohnson);
-// Rmptip(professorElement[1], jacksonDaniels);
-// Rmptip(professorElement[2], bananaSu);
+var RmpUtility = new rmpUtility();
+
+/* Testing for rmp tips  */
+RmpUtility.tip(professorElements[0], jordanJohnson);
+RmpUtility.tip(professorElements[1], jacksonDaniels);
+RmpUtility.tip(professorElements[2], bananaSu);
 
 /* Testing for multiple comments with multiple Comment Areas */
-// var commentArea1 = new CommentArea($("#prof1"),[comment1,comment2,comment3]);
-// var commentArea2 = new CommentArea($("#prof2"),[comment2, comment2]);
-// var commentArea3 = new CommentArea($("#prof3"),[comment3]);
+RmpUtility.comment(professorElements[0],[comment1,comment2,comment3]);
+RmpUtility.comment(professorElements[1],[comment1,comment2]);
+RmpUtility.comment(professorElements[2],[comment1]);
+console.log(RmpUtility);
+
 

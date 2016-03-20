@@ -24,19 +24,19 @@ In order to use the rmpUtility, you first have to create an instance of the util
   var RmpUtility = new rmpUtility();
 ```
 
-The rmpUtility includes the tip that appears on the target element provided as well as the comments which appears
+The rmpUtility includes the tip that appears on the target element provided, as well as the comments which appears
 from the side of the page. The tip and comments require valid professor data or will display error messages on the console. The target element is the element from which the tip will appear and can be a JQuery or nonJQuery object.
 
-In order to create the rmptip you must invoke the tip method with a target element and professor data object.
+In order to create the rmp-tip you must invoke the tip method with a target element and professor data object.
 
 ```javascript
   RmpUtility.tip(targetElement, professorData);
 ```
 
-In order to create the Rmp-comments you must invoke the comment method with a target element and commentData array filled with comment data objects.
+In order to create the rmp-comments you must invoke the comment method with a target element and commentData array filled with comment data objects.
 
 ```javascript
-  RmpUtility.comment(targetElement, commentDataArray);
+  RmpUtility.commentArea(targetElement, commentDataArray);
 ```
 
 The format of the professor data object should be as following.
@@ -62,6 +62,8 @@ The format of the comment data object should be as following.
     text: "He was the best professor ever. He was so engaging during lectures and really made you think. Yeah there was a lot of work but it wasn't so bad considering you learned a lot from it.",
     tag: "Amazing Lectures"
   };
+  
+  var commentDataArray = [commentData,commentData,commentData,......];
 ```
 
 Authors

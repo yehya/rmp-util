@@ -1,6 +1,8 @@
 Rmp-Utility Framework
 =======
 
+![image](https://cloud.githubusercontent.com/assets/10437615/13903906/a44200d0-ee63-11e5-9a1e-3d03733b413b.png)
+
 A framework that presents rate my professor data in two beautiful pop-ups. Checkout the live Demo
 
 Want to contribute to Rmp-Utility? Please read `CONTRIBUTING.md`.

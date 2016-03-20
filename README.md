@@ -69,13 +69,22 @@ The format of the comment data object should be as following.
 Include all the proper css and javascript links as follows:
 
 ```html
+<html>
+    <head>
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../bower_components/opentip/css/opentip.css" rel="stylesheet" type="text/css" />
+        <link href="../css/rmpUtility.css" rel="stylesheet" type="text/css" />
+        <link href="https://986f2877cd23a316c604358edd755defa8ce9026.googledrive.com/host/0BzcasCLBmJFJTmJmZ1hnb19KSzA/league-gothic.regular.ttf">
+    </head>
+    <body>
+        <!-- Regular body -->
+    </body>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/opentip/lib/opentip.js"></script>
     <script src="../bower_components/opentip/lib/adapter-jquery.js"></script>
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../bower_components/opentip/css/opentip.css" rel="stylesheet" type="text/css" />
-    <link href="../css/rmpUtility.css" rel="stylesheet" type="text/css" />
-    <link href="https://986f2877cd23a316c604358edd755defa8ce9026.googledrive.com/host/0BzcasCLBmJFJTmJmZ1hnb19KSzA/league-gothic.regular.ttf">
+    <script type="text/javascript" src="../rmpUtility.js"></script>
+    <script type="text/javascript" src="rmpUtilitytest.js"></script>
+</html>
 ```
 
 Authors

@@ -23,7 +23,7 @@ Usage
 In order to use the rmpUtility, you first have to create an instance of the utility
 
 ```javascript
-  var RmpUtility = new rmpUtility();
+  var rmpUtil = new RmpUtility();
 ```
 
 The rmpUtility includes the tip that appears on the target element provided, as well as the comments which appears
@@ -32,13 +32,13 @@ from the side of the page. The tip and comments require valid professor data or 
 In order to create the rmp-tip you must invoke the tip method with a target element and professor data object.
 
 ```javascript
-  RmpUtility.tip(targetElement, professorData);
+  rmpUtil.tip(targetElement, professorData);
 ```
 
 In order to create the rmp-comments you must invoke the comment method with a target element and commentData array filled with comment data objects.
 
 ```javascript
-  RmpUtility.commentArea(targetElement, commentDataArray);
+  rmpUtil.commentArea(targetElement, commentDataArray);
 ```
 
 The format of the professor data object should be as following.

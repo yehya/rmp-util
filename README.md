@@ -1,32 +1,32 @@
-rmpUtility Framework
+rmp-util
 =======
 ![image](https://cloud.githubusercontent.com/assets/10437615/13903906/a44200d0-ee63-11e5-9a1e-3d03733b413b.png)
 
 
 A framework that presents rate my professor data in two beautiful pop-ups. Checkout the live Demo
 
-Want to contribute to rmpUtility? Please read `CONTRIBUTING.md`.
+Want to contribute to rmp-util? Please read `CONTRIBUTING.md`.
 
 Installation 
 ------------
 
 To install the latest version available on Bower:
 
-    bower install rmpUtility --save
+    bower install rmp-util --save
 
 To install the latest development version:
 
-    bower install git+https://github.com/abdallahozaifa/rmpUtility
+    bower install git+https://github.com/awadYehya/rmp-util
 
 Usage 
 -----
-In order to use the rmpUtility, you first have to create an instance of the utility
+In order to use the rmp-util, you first have to create an instance of the utility
 
 ```javascript
-  var rmpUtil = new RmpUtility();
+  var rmpUtil = new rmpU();
 ```
 
-The rmpUtility includes the tip that appears on the target element provided, as well as the comments which appears
+The rmp-util includes the tip that appears on the target element provided, as well as the comments which appears
 from the side of the page. The tip and comments require valid professor data or will display error messages on the console. The target element is the element from which the tip will appear and can be a JQuery or nonJQuery object.
 
 In order to create the rmp-tip you must invoke the tip method with a target element and professor data object.
@@ -75,7 +75,7 @@ Include all the proper css and javascript links as follows:
     <head>
         <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../bower_components/opentip/css/opentip.css" rel="stylesheet" type="text/css" />
-        <link href="../css/rmpUtility.css" rel="stylesheet" type="text/css" />
+        <link href="../css/rmp-util.css" rel="stylesheet" type="text/css" />
         <link href="https://986f2877cd23a316c604358edd755defa8ce9026.googledrive.com/host/0BzcasCLBmJFJTmJmZ1hnb19KSzA/league-gothic.regular.ttf">
     </head>
     <body>
@@ -84,14 +84,14 @@ Include all the proper css and javascript links as follows:
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/opentip/lib/opentip.js"></script>
     <script src="../bower_components/opentip/lib/adapter-jquery.js"></script>
-    <script type="text/javascript" src="../rmpUtility.js"></script>
-    <script type="text/javascript" src="rmpUtilitytest.js"></script>
+    <script type="text/javascript" src="../rmp-util.js"></script>
+    <script type="text/javascript" src="rmp-utiltest.js"></script>
 </html>
 ```
 
 Authors
 -------
-rmpUtility was created by Hozaifa Abdalla and Yehya Awad
+rmp-util was created by Hozaifa Abdalla and Yehya Awad
 
 Related Projects
 ----------------
@@ -100,13 +100,13 @@ You might also be interested in our [PSU Rate My Professor Plugin](https://chrom
 For More Information
 --------------------
 
-+ Documentation is available at [Use rmpUtility](http://usejsdoc.org).
-+ Contribute to the docs at [rmpUtility](https://github.com/awadYehya/rmp-tip).
++ Documentation is available at [Use rmp-util](http://usejsdoc.org).
++ Contribute to the docs at [rmp-util](https://github.com/awadYehya/rmp-tip).
 
 License
 -------
 
-rmpUtility is copyright (c) 2016 Hozaifa Abdalla, Yehya Awad. <br>rmpUtility is free software, licensed under the MIT License, See the file `LICENSE.md` in this distribution for more details.
+rmp-util is copyright (c) 2016 Hozaifa Abdalla, Yehya Awad. <br>rmp-util is free software, licensed under the MIT License, See the file `LICENSE.md` in this distribution for more details.
 
 
 

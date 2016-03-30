@@ -1,5 +1,5 @@
 {
-  "name": "rmp-tip",
+  "name": "rmp-util",
   "main": "rmp-tip.js",
   "homepage": "https://github.com/awadYehya/rmp-tip",
   "authors": [
@@ -15,7 +15,6 @@
     "tip"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
